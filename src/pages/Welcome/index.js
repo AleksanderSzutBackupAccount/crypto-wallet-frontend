@@ -75,7 +75,7 @@ const Welcome = () => {
           </ul>
           <h2 className="zl_welcome_slide_heading">Welcome to crypto</h2>
           <p className="zl_welcome_slide_peregraph">
-            DE-Crypto Wallet is a Crypto currency wallet based webapp.
+            Chainex Wallet is a Crypto currency wallet based webapp.
           </p>
           {nextButton()}
         </React.Fragment>

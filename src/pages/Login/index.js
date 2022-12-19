@@ -55,7 +55,7 @@ const LogIn = () => {
         <div className="zl_login_heading_text">
           <h3 className="zl_login_heading">Login</h3>
           <p className="zl_login_peregraph">
-            Login De-crypto app with your secret words.
+            Login Chainex app with your secret words.
           </p>
         </div>
         <div className="zl_login_row row">
