@@ -1,4 +1,5 @@
 import { Navigate, Outlet } from "react-router-dom";
+
 import DashboardPage from "./pages/Dashboard";
 import Portfolio from "./pages/Portfolio";
 import AddCurrency from "./pages/AddCurrency";
@@ -10,9 +11,9 @@ import RestoreWallet from "./pages/RestoreWallet";
 import Currency from "./pages/Currency";
 import LogIn from "./pages/Login";
 import Page404 from "./pages/Page404";
+import WelcomeModule from "./pages/Welcome";
 
 import { routes } from "../src/constants";
-import WelcomeModule from "./pages/Welcome";
 
 const getRoutes = (user_crypto_currency_data) => [
   {
