@@ -1476,8 +1476,6 @@ table {
       z-index: -1;
     }
     &:hover {
-      background-color: red;
-      text-decoration: underline;
       .zl_add_currency_right_price_negative, .zl_add_currency_right_price_positive {
         color: white !important;
       }
@@ -1671,19 +1669,6 @@ table {
       max-width: 180px;
       min-width: 180px;
       width: 100%;
-      &:active {
-        border: 0;
-        background-color: $color3 !important;
-        border-radius: 10px;
-        font-weight: bold;
-        font-size: 20px;
-        line-height: 24px;
-        color: $color4 !important;
-        padding: 17px;
-        max-width: 180px;
-        min-width: 180px;
-        width: 100%;
-      }
       svg {
         margin-right: 11px;
       }
@@ -1691,40 +1676,47 @@ table {
     button.zl_wallet_chart_send_btn {
       margin-right: 20px;
     }
-    button.zl_wallet_chart_recive_btn {
-      svg {
-        transform: rotate(180deg);
+    .zl_wallet_chart_send_btn, .zl_wallet_chart_recive_btn{
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 500;
+      background: $blue-gradient;
+    }
+    .zl_wallet_chart_recive_btn {
+      padding: 1px !important;
+      &_inner {
+        border-radius: 30px;
+        padding: 17px;
+        background-color: white;
+        img {
+          margin-right: 5px;
+        }
+        &::after {
+          content: 'Receive';
+          background: $blue-gradient;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          text-fill-color: transparent;
+        }
       }
     }
   }
 }
 .zl_send_currency_btn_text {
   .zl_send_currency_btn {
-    border: 0;
-    background-color: $color3 !important;
-    border-radius: 10px;
+    background: $blue-gradient;
+    border: none !important;
+    color: white;
     font-weight: bold;
     font-size: 20px;
     line-height: 24px;
-    color: $color4 !important;
     padding: 17px;
     max-width: 180px;
     min-width: 180px;
     width: 100%;
     margin-right: 41px;
-    &:active {
-      border: 0;
-      background-color: $color3 !important;
-      border-radius: 10px;
-      font-weight: bold;
-      font-size: 20px;
-      line-height: 24px;
-      color: $color4 !important;
-      padding: 17px;
-      max-width: 180px;
-      min-width: 180px;
-      width: 100%;
-    }
+    border-radius: 30px;
   }
   display: flex;
   align-items: center;
@@ -2077,16 +2069,19 @@ table {
 .zl_securebackup_btn {
   margin-top: 60px;
   a {
-    background: $color3;
-    border-radius: 10px;
+    svg {
+      margin-right: 5px;
+    }
+    background: $blue-gradient;
+    color: white;
+    border-radius: 30px;
     min-width: 180px;
     max-width: 180px;
     display: block;
+    font-weight: 500;
     padding: 18px;
-    font-weight: bold;
     font-size: 20px;
     line-height: 24px;
-    color: $color4;
     text-align: center;
     &:hover {
       text-decoration: none;

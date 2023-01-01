@@ -1237,10 +1237,6 @@ table td {
   filter: blur(90.885px);
   z-index: -1;
 }
-.zl_history_page .zl_add_currency_inner_content:hover {
-  background-color: red;
-  text-decoration: underline;
-}
 .zl_history_page .zl_add_currency_inner_content:hover .zl_add_currency_right_price_negative, .zl_history_page .zl_add_currency_inner_content:hover .zl_add_currency_right_price_positive {
   color: white !important;
 }
@@ -1390,27 +1386,36 @@ table td {
   min-width: 180px;
   width: 100%;
 }
-.zl_wallet_chart_bottom_content .zl_wallet_chart_send_recive_btn button:active {
-  border: 0;
-  background-color: #828CAE !important;
-  border-radius: 10px;
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 24px;
-  color: #3F496C !important;
-  padding: 17px;
-  max-width: 180px;
-  min-width: 180px;
-  width: 100%;
-}
 .zl_wallet_chart_bottom_content .zl_wallet_chart_send_recive_btn button svg {
   margin-right: 11px;
 }
 .zl_wallet_chart_bottom_content .zl_wallet_chart_send_recive_btn button.zl_wallet_chart_send_btn {
   margin-right: 20px;
 }
-.zl_wallet_chart_bottom_content .zl_wallet_chart_send_recive_btn button.zl_wallet_chart_recive_btn svg {
-  transform: rotate(180deg);
+.zl_wallet_chart_bottom_content .zl_wallet_chart_send_recive_btn .zl_wallet_chart_send_btn, .zl_wallet_chart_bottom_content .zl_wallet_chart_send_recive_btn .zl_wallet_chart_recive_btn {
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 500;
+  background: linear-gradient(100.86deg, #424C6E 26.9%, #53B9EA 95.9%);
+}
+.zl_wallet_chart_bottom_content .zl_wallet_chart_send_recive_btn .zl_wallet_chart_recive_btn {
+  padding: 1px !important;
+}
+.zl_wallet_chart_bottom_content .zl_wallet_chart_send_recive_btn .zl_wallet_chart_recive_btn_inner {
+  border-radius: 30px;
+  padding: 17px;
+  background-color: white;
+}
+.zl_wallet_chart_bottom_content .zl_wallet_chart_send_recive_btn .zl_wallet_chart_recive_btn_inner img {
+  margin-right: 5px;
+}
+.zl_wallet_chart_bottom_content .zl_wallet_chart_send_recive_btn .zl_wallet_chart_recive_btn_inner::after {
+  content: "Receive";
+  background: linear-gradient(100.86deg, #424C6E 26.9%, #53B9EA 95.9%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }
 
 .zl_send_currency_btn_text {
@@ -1420,31 +1425,18 @@ table td {
   flex-wrap: wrap;
 }
 .zl_send_currency_btn_text .zl_send_currency_btn {
-  border: 0;
-  background-color: #828CAE !important;
-  border-radius: 10px;
+  background: linear-gradient(100.86deg, #424C6E 26.9%, #53B9EA 95.9%);
+  border: none !important;
+  color: white;
   font-weight: bold;
   font-size: 20px;
   line-height: 24px;
-  color: #3F496C !important;
   padding: 17px;
   max-width: 180px;
   min-width: 180px;
   width: 100%;
   margin-right: 41px;
-}
-.zl_send_currency_btn_text .zl_send_currency_btn:active {
-  border: 0;
-  background-color: #828CAE !important;
-  border-radius: 10px;
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 24px;
-  color: #3F496C !important;
-  padding: 17px;
-  max-width: 180px;
-  min-width: 180px;
-  width: 100%;
+  border-radius: 30px;
 }
 .zl_send_currency_btn_text .zl_send_currency_text p {
   font-size: 14px;
@@ -1787,17 +1779,20 @@ table td {
   margin-top: 60px;
 }
 .zl_securebackup_btn a {
-  background: #828CAE;
-  border-radius: 10px;
+  background: linear-gradient(100.86deg, #424C6E 26.9%, #53B9EA 95.9%);
+  color: white;
+  border-radius: 30px;
   min-width: 180px;
   max-width: 180px;
   display: block;
+  font-weight: 500;
   padding: 18px;
-  font-weight: bold;
   font-size: 20px;
   line-height: 24px;
-  color: #3F496C;
   text-align: center;
+}
+.zl_securebackup_btn a svg {
+  margin-right: 5px;
 }
 .zl_securebackup_btn a:hover {
   text-decoration: none;

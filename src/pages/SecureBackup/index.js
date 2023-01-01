@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import HeadingModule from "../../component/Layout/Header";
-
+import {showIcon} from "../../icons"
 const SecureBackup = () => {
   const inputField = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
@@ -50,6 +50,7 @@ const SecureBackup = () => {
             }}
             className="mx-auto"
           >
+              {showIcon}
             Show
           </Link>
         ) : (

@@ -92,7 +92,7 @@ const Wallets = () => {
                   to={routes.addCurrencyPage}
                   className="zl_add_currency_btn_content"
                 >
-                  + Add Currency
+                  Add Currency
                 </Link>
               </div>
             </Nav>
