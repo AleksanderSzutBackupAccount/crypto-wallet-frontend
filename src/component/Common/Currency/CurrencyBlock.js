@@ -30,7 +30,9 @@ const CurrencyBlock = ({ coinMarketData, crypto, chartData }) => {
           <SparklinesLine
             style={{
               strokeWidth: 10,
-              stroke: "#fec74f",
+              stroke: coinMarketChange > 0
+                  ? "#05FF96"
+                  : `#FF4E63`,
               fill: "none",
               curve: "smooth",
             }}

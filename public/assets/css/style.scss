@@ -328,11 +328,11 @@ ul {
   border-radius: 4px;
 }
 .zl_bottom_content_heading {
-  font-weight: 600;
-  font-size: 12px;
+  font-weight: 700;
+  font-size: 14px;
   line-height: 15px;
   text-transform: uppercase;
-  color: $color1;
+  color: $color4;
 }
 input {
   &::-webkit-outer-spin-button {
@@ -638,6 +638,7 @@ table {
       }
     }
     .btn-primary {
+      background: $blue-gradient;
       &:not(:disabled) {
         &:not(.disabled) {
           &:active {
@@ -649,11 +650,22 @@ table {
       }
     }
     .zl_all_page_logout_btn {
-      font-weight: 600;
       font-size: 13px;
+      padding: 14px 48px;
+      border-radius: 30px;
+      background: $blue-gradient;
+      font-weight: 500;
       line-height: 16px;
-      color: $color3;
       text-decoration: none;
+      display: flex;
+      &::before {
+        content: '';
+        display: flex;
+        background-image: url("../image/logout.svg");
+        width: 18px;
+        height: 18px;
+        margin-right: 5px;
+      }
     }
     .dropdown-menu {
       background: $gradian-color2;
@@ -835,11 +847,11 @@ table {
   .zl_all_page_heading {
     margin-right: 15px;
     h2 {
-      font-weight: 600;
+      font-weight: 700;
       font-size: 30px;
       line-height: 37px;
+      font-family: 'Montserrat', sans-serif;
       color: $color5;
-      opacity: 0.9;
       font-style: normal;
       margin-bottom: 6px;
     }
@@ -876,7 +888,7 @@ table {
   align-items: center;
   margin-bottom: 32px;
   .zl_chart_box_heading {
-    font-weight: 600;
+    font-weight: 700;
     font-size: 24px;
     color: $color1;
     margin-right: auto;
@@ -897,15 +909,15 @@ table {
 .zl_all_page_comman_total_price {
   margin-top: 32px;
   .zl_all_page_total_price_heading {
-    font-weight: 600;
-    font-size: 12px;
+    font-weight: 500;
+    font-size: 14px;
     line-height: 16px;
     letter-spacing: 0.4px;
     color: $color3;
     margin-bottom: 0;
   }
   .zl_all_page_total_price_text {
-    font-weight: 600;
+    font-weight: 700;
     font-size: 24px;
     line-height: 132%;
     color: $color1;
@@ -929,7 +941,6 @@ table {
     font-size: 12px;
     line-height: 16px;
     letter-spacing: 0.4px;
-    color: $color9;
     color: $color10;
     svg {
       margin-right: 7px;
@@ -956,6 +967,9 @@ table {
     .zl_add_currency_column {
       max-width: 25%;
       min-width: 25%;
+      &--button {
+        background: $blue-gradient;
+      }
     }
     &::-webkit-scrollbar {
       width: 5px;
@@ -978,7 +992,9 @@ table {
     padding: 0 10px;
     .zl_add_currency_inner_content {
       padding: 22px 16px;
-      border: 1px solid $color21;
+      width: 250px;
+      border: 0.5px solid #E0E0E0;
+      box-shadow: 0px 4px 7px 0px #0000001A;
       border-radius: 10px;
       position: relative;
       .zl_add_currency_icon_chart {
@@ -987,7 +1003,6 @@ table {
         margin-bottom: 14px;
         svg {
           width: 70px;
-          filter: drop-shadow(0px 5px 4px $color29);
           g {
             &:last-child {
               circle {
@@ -1004,28 +1019,30 @@ table {
       .zl_add_currency_price {
         display: flex;
         align-items: flex-start;
+        color: #000;
         .zl_add_currency_left_price {
           margin-right: auto;
           display: flex;
           flex-direction: column;
         }
         h3 {
-          font-weight: bold;
-          font-size: 12px;
+          font-weight: 700;
+          font-size: 14px;
           line-height: 15px;
-          color: $color3;
+          color: $color4;
         }
         p {
-          font-size: 17px;
+          font-size: 16px;
           line-height: 21px;
-          color: $color11;
+          font-weight: 500;
+          color: #000;
           margin-top: auto;
           margin-bottom: 0;
         }
         span {
           font-size: 11px;
           line-height: 13px;
-          color: $color9;
+          color: #000;
           svg {
             margin-right: 7px;
           }
@@ -1036,10 +1053,24 @@ table {
       }
       .zl_add_currency_right_price {
         text-align: right;
+
+        .zl_add_currency_right_price_positive, .zl_add_currency_right_price_negative {
+          font-style: italic;
+          font-family: 'Poppins', sans-serif;
+          font-size: 14px;
+        }
+        .zl_add_currency_right_price_positive {
+          color: $color-positive;
+        }
+        .zl_add_currency_right_price_negative {
+          color: $color-negative;
+        }
       }
     }
     .zl_add_currency_btn_content {
       border: 1px dashed $color21;
+      background: $blue-gradient !important;
+      color: white;
       border-radius: 10px;
       padding: 15px;
       height: 100%;
@@ -1049,8 +1080,16 @@ table {
       font-weight: 600;
       font-size: 13px;
       line-height: 16px;
-      color: $color3;
       text-decoration: none;
+
+      &::before {
+        content: '';
+        display: block;
+        margin-right: 5px;
+        background: url("../image/add-currency.svg");
+        width: 24px;
+        height: 24px;
+      }
     }
   }
 }
@@ -1065,6 +1104,9 @@ table {
   .zl_add_currency_inner_content.zl_add_bitcoin_currency {
     &:hover {
       background: $gradian-color6;
+      .zl_add_currency_right_price_negative, .zl_add_currency_right_price_positive {
+        color: white !important;
+      }
       .zl_add_currency_icon_chart {
         .zl_currency_icon {
           svg {
@@ -1118,7 +1160,6 @@ table {
       .zl_add_currency_price {
         h3 {
           color: $color5;
-          opacity: 0.5;
         }
         p {
           color: $color13;
@@ -1202,6 +1243,9 @@ table {
     }
   }
   .zl_add_currency_inner_content.active {
+    .zl_add_currency_right_price_negative, .zl_add_currency_right_price_positive {
+      color: white !important;
+    }
     .zl_add_currency_icon_chart {
       .zl_currency_icon {
         background: $color13;
@@ -1216,7 +1260,6 @@ table {
     .zl_add_currency_price {
       h3 {
         color: $color5;
-        opacity: 0.5;
       }
       p {
         color: $color13;
@@ -1355,6 +1398,18 @@ table {
     margin-top: 27px;
   }
 }
+.apexcharts-tooltip-title, .apexcharts-xaxistooltip {
+  background: $blue-gradient !important;
+  color: #fff !important;
+  border: none !important;
+}
+.apexcharts-tooltip {
+  border: none !important;
+}
+.apexcharts-xaxistooltip {
+  padding: 9px !important;
+  border-radius: 5px !important;
+}
 .apexcharts-legend-series {
   margin: 0 !important;
   padding: 6px 16px;
@@ -1421,6 +1476,11 @@ table {
       z-index: -1;
     }
     &:hover {
+      background-color: red;
+      text-decoration: underline;
+      .zl_add_currency_right_price_negative, .zl_add_currency_right_price_positive {
+        color: white !important;
+      }
       .zl_add_currency_icon_chart {
         .zl_currency_icon {
           background: $color13;
@@ -1529,6 +1589,9 @@ table {
           stroke: $color13 !important;
         }
       }
+    }
+    .zl_add_currency_right_price_negative, .zl_add_currency_right_price_positive {
+      color: white !important;
     }
     .zl_add_currency_price {
       h3 {

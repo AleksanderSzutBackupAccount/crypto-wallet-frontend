@@ -112,26 +112,6 @@
               }
             }
           }
-          &:nth-child(6) {
-            .zl_page_sidebar_link {
-              svg {
-                path {
-                  fill: none;
-                  stroke: $color12;
-                }
-              }
-            }
-          }
-          &:nth-child(2) {
-            .zl_page_sidebar_link {
-              svg {
-                path {
-                  fill: none;
-                  stroke: $color12;
-                }
-              }
-            }
-          }
         }
       }
     }
@@ -149,7 +129,7 @@
     }
     .zl_all_page_notify_logout_btn {
       .zl_all_page_logout_btn {
-        color: $color12;
+        color: $color5;
       }
       .dropdown-menu {
         background: $gradian-color16;
@@ -205,28 +185,22 @@
   }
   .zl_chart_box_heading_date {
     .zl_chart_box_heading {
-      color: $color12;
+      color: $color4;
     }
   }
   .zl_all_page_comman_total_price {
     .zl_all_page_total_price_text {
-      color: $color12;
+      color: #000;
     }
   }
   .zl_add_currency_row {
     .zl_add_currency_column {
       .zl_add_currency_inner_content {
-        .zl_add_currency_price {
-          p {
-            color: $color12;
-            opacity: 0.7;
-          }
-        }
         border-color: $color20;
       }
       .zl_add_currency_btn_content {
-        color: $color12;
-        border-color: $color20;
+        color: #fff;
+        border: none;
       }
     }
     .zl_currency_column_sub_row {
@@ -293,8 +267,11 @@
       .zl_add_currency_column {
         .zl_add_currency_inner_content {
           .zl_add_currency_price {
+            h3 {
+              color: $color4 !important;
+            }
             p {
-              opacity: 1;
+              color: #000 !important;
             }
           }
         }
@@ -303,16 +280,22 @@
     .zl_add_currency_inner_content {
       &:hover {
         .zl_add_currency_price {
+          h3 {
+            color: $color4 !important;
+          }
           p {
-            color: $color13 !important;
+            color: #000 !important;
           }
         }
       }
     }
     .zl_add_currency_inner_content.active {
       .zl_add_currency_price {
+        h3 {
+          color: $color4 !important;
+        }
         p {
-          color: $color13 !important;
+          color: #000 !important;
         }
       }
     }
@@ -321,16 +304,22 @@
     .zl_add_currency_inner_content {
       &:hover {
         .zl_add_currency_price {
+          h3 {
+            color: $color4 !important;
+          }
           p {
-            color: $color13 !important;
+            color: #000 !important;
           }
         }
       }
     }
     .zl_add_currency_inner_content.active {
       .zl_add_currency_price {
+        h3 {
+          color: $color4 !important;
+        }
         p {
-          color: $color13 !important;
+          color: #000 !important;
         }
       }
     }

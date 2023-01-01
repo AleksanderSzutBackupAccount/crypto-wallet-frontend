@@ -131,12 +131,12 @@ const Dashboard = () => {
               setTotalBalance={setTotalBalance}
               updateBalance={true}
             />
-            <div className="zl_add_currency_column col">
+            <div className="zl_add_currency_column col zl_add_currency_column--button">
               <Link
                 to={routes.addCurrencyPage}
                 className="zl_add_currency_btn_content"
               >
-                + Add Currency
+                Add Currency
               </Link>
             </div>
           </div>

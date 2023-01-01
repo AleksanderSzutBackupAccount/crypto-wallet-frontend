@@ -1,10 +1,11 @@
 @import "https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital@0;1&display=swap');
 
 // color varibable
 $color1: #C0C3CC;
 $color2: #ffffffe6;
 $color3: #828CAE;
-$color4: #252F47;
+$color4: #3F496C;
 $color5: #FFFFFF;
 $color6: #ffffffb3;
 $color7: #53B9EA;
@@ -58,3 +59,10 @@ $gradian-color18: linear-gradient(180deg, #F9FBFF 0%, #F7F9FD 57.44%, #FDFEFF 10
 
 // font family varibable
 $fontfamily: 'Montserrat', sans-serif;
+
+
+//new styles
+$blue-gradient: linear-gradient(100.86deg, #424C6E 26.9%, #53B9EA 95.9%);
+
+$color-positive: #05FF96;
+$color-negative: #FF4E63;

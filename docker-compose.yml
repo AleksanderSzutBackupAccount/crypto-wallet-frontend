@@ -1,0 +1,16 @@
+version: '3'
+services:
+  react-wallet:
+    build:
+      context: .
+      dockerfile: docker/dev/Dockerfile
+    volumes:
+      - .:/app
+      - /app/node_modules/
+    ports:
+      - '3005:3000'
+    networks:
+      - sail
+networks:
+  sail:
+    driver: bridge
