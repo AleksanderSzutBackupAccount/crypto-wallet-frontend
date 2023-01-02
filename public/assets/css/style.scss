@@ -1635,14 +1635,14 @@ table {
   display: flex !important;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
-  font-size: 13px;
+  background: $blue-gradient;
+  font-weight: 500;
+  font-size: 14px;
   line-height: 16px;
   color: $color3;
   position: relative;
   &:hover {
     color: $color5;
-    background: $gradian-color3;
   }
 }
 .zl_wallet_chart_bottom_content {
@@ -2018,7 +2018,6 @@ table {
 }
 .zl_all_currency_content.active {
   color: $color5;
-  background: $gradian-color3;
   &::before {
     background: $gradian-color12;
   }

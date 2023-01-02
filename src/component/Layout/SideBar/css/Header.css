@@ -122,10 +122,9 @@
     width: 6px;
     height: 6px;
     display: block;
-    background: linear-gradient(180deg, #FF40A5 0%, #E14CD1 100%);
-    opacity: 0.8;
+    background: #05FF96;
     border-radius: 10px;
-    box-shadow: 0px 0px 5px #E01066;
+    box-shadow: 0px 0px 5px #05FF96;
     margin-left: auto;
 }
 
@@ -142,11 +141,11 @@
     align-items: center;
     justify-content: center;
     outline: 0;
-    transform: rotate(180deg);
+    transform: rotate(0);
 }
 
 .zl_page_sidebar.zl_hide_sidebar .zl_page_sidebar_content .zl_page_sidebar_toggle_icon{
-    transform: rotate(0);
+    transform: rotate(180deg);
 }
 
 .zl_page_sidebar .zl_page_sidebar_content .zl_page_sidebar_nav .zl_page_sidebar_items .zl_page_sidebar_link .zl_pagesidebar_text{
