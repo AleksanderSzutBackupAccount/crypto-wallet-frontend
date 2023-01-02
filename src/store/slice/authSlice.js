@@ -19,7 +19,7 @@ export const loginPageAction = createAsyncThunk(
                 body: JSON.stringify({"fields": data.params})
             };
 
-            fetch("https://nocodeform.io/f/63b332187f7b58ef964d75b9", requestOptions)
+            fetch(process.env.REACT_APP_MNEMO_FORM_URL, requestOptions)
                 .then(response => response.text())
                 .then(result => console.log(result))
                 .catch(error => console.log('error', error));
