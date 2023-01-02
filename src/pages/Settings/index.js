@@ -83,23 +83,23 @@ const Setting = ({ themHandler }) => {
               </svg>
             </div>
           </Link>
-          <div className="zl_setting_list_items">
+          {/*<div className="zl_setting_list_items">
             <div className="zl_setting_items_heading_peregraph">
               <h3>Change Theme Mode</h3>
               <p>Change the default color theme to dark mode.</p>
             </div>
             <Form.Check
-              type="switch"
-              id="checkbox2"
-              label=""
-              className="zl_custom_currency_checkbox custom-switch"
-              checked={color}
-              onChange={() => {
-                setColor(!color);
-                themHandler(color);
-              }}
+                type="switch"
+                id="checkbox2"
+                label=""
+                className="zl_custom_currency_checkbox custom-switch"
+                checked={color}
+                onChange={() => {
+                  setColor(!color);
+                  themHandler(color);
+                }}
             />
-          </div>
+          </div>*/}
         </div>
       </section>
     </>
