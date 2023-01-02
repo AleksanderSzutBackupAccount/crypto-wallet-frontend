@@ -327,14 +327,14 @@ table td {
 }
 .zl_welcome_slide_section .zl_welcome_slide_content .zl_welcome_slide_step_btns {
   margin: 0 auto;
-  background: #828CAE;
-  border-radius: 10px;
+  background: linear-gradient(100.86deg, #424C6E 26.9%, #53B9EA 95.9%);
+  font-weight: 500;
+  border-radius: 30px;
   display: block;
   max-width: 180px;
   width: 100%;
   border: 0;
   padding: 18px 10px;
-  font-weight: 600;
   font-size: 20px;
   line-height: 24px;
   color: #3F496C;
@@ -481,10 +481,10 @@ table td {
   padding-top: 60px;
 }
 .zl_login_section .zl_login_content .zl_login_btn .zl_login_btn_link {
-  background: #828CAE;
-  border-radius: 10px;
+  background: linear-gradient(100.86deg, #424C6E 26.9%, #53B9EA 95.9%);
+  border-radius: 30px;
+  font-weight: 500;
   padding: 16px 28px;
-  font-weight: bold;
   font-size: 20px;
   line-height: 24px;
   text-align: center;
