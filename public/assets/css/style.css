@@ -267,6 +267,11 @@ table td {
   flex-direction: column;
   position: relative;
 }
+.zl_welcome_slide_section .zl_welcome_slide_content .zl_welcome_slide_img {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #3F496C;
+}
 .zl_welcome_slide_section .zl_welcome_slide_content .zl_welcome_slide_img img {
   filter: drop-shadow(0px 50px 50px rgba(0, 0, 0, 0.1));
   order: 1;
