@@ -35,6 +35,7 @@ const SecureBackup = () => {
                 name={`input${inputValue}`}
                 placeholder="_____"
                 defaultValue={value && recState ? value[i] : ""}
+                disabled="true"
               />
             </div>
           </div>

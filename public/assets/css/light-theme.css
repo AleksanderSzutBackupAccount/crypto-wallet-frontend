@@ -53,6 +53,22 @@
   color: #3F496C;
   opacity: 1;
 }
+.zl_light_theme_active .zl_login_section .zl_login_content .zl_login_input_content {
+  position: relative;
+}
+.zl_light_theme_active .zl_login_section .zl_login_content .zl_login_input_content:focus-within {
+  outline: none;
+  border: none;
+  background: linear-gradient(100.86deg, #424C6E 26.9%, #53B9EA 95.9%);
+  color: white;
+}
+.zl_light_theme_active .zl_login_section .zl_login_content .zl_login_input_content:focus-within .zl_login_input_text {
+  color: white;
+}
+.zl_light_theme_active .zl_login_section .zl_login_content .zl_login_input_content:focus-within .zl_login_input {
+  color: white;
+  border-color: white;
+}
 .zl_light_theme_active .zl_login_section .zl_login_content .zl_login_input_content .zl_login_input {
   color: #3D476A;
 }

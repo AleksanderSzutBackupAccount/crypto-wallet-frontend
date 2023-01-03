@@ -65,6 +65,21 @@
         }
       }
       .zl_login_input_content {
+        position: relative;
+        &:focus-within {
+          outline: none;
+          border: none;
+          background: $blue-gradient;
+          color: white;
+
+          .zl_login_input_text {
+            color: white;
+          }
+          .zl_login_input {
+            color: white;
+            border-color: white;
+          }
+        }
         .zl_login_input {
           color: $color12;
         }
