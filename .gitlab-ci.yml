@@ -36,7 +36,7 @@ build:
   rules:
     - if: $CI_PIPELINE_SOURCE == "push"
   variables:
-    IMAGE_NAME: "my-app"
+    IMAGE_NAME: "crypto-wallet-frontend"
   script:
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
 
