@@ -1,5 +1,10 @@
 image: docker:git
 
+variables:
+  GITLAB_IMAGE: registry.gitlab.com/author-name/my-project
+  GCR_IMAGE: eu.gcr.io/my-project/image-name
+  GOOGLE_CLOUD_ACCOUNT: 106699670540725565587
+
 services:
   - docker:dind
 
