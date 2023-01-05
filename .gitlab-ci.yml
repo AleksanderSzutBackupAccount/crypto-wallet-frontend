@@ -1,23 +1,26 @@
+image: docker:git
+
+services:
+  - docker:dind
+
 build:
-  image: docker:19.03.12
   stage: build
-  services:
-    - docker:19.03.12-dind
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "push"
-  variables:
-    IMAGE_NAME: "crypto-wallet-frontend"
+  before_script:
+    # $CI_JOB_TOKEN is variable automatically added by Gitlab: see https://docs.gitlab.com/ee/ci/variables/predefined_variables.html#variables-reference
+    - echo $CI_JOB_TOKEN | docker login -u gitlab-ci-token registry.gitlab.com --password-stdin
   script:
-    - echo $CI_REGISTRY_PASSWORD | docker login -u $CI_REGISTRY_USER $CI_REGISTRY --password-stdin
-    - docker build -f docker/shared/Dockerfile -t $CI_REGISTRY/$CI_PROJECT_PATH/$IMAGE_NAME:$CI_COMMIT_SHORT_SHA .
-    - IMAGE_ID=$(docker images | grep $CI_REGISTRY/$CI_PROJECT_PATH\/$IMAGE_NAME | awk '{print $3}')
-    - docker tag $IMAGE_ID $CI_REGISTRY/$CI_PROJECT_PATH/$IMAGE_NAME:latest
+    - docker pull $GITLAB_IMAGE || true # Allows us to use --cache-from
+    - docker build --cache-from $GITLAB_IMAGE -t $GITLAB_IMAGE:$CI_COMMIT_SHA -f docker/shared/Dockerfile .
+    - docker push $GITLAB_IMAGE:$CI_COMMIT_SHA
 
-    - docker push $CI_REGISTRY/$CI_PROJECT_PATH/$IMAGE_NAME:$CI_COMMIT_SHORT_SHA
-    - docker push $CI_REGISTRY/$CI_PROJECT_PATH/$IMAGE_NAME:latest
-
-#test:
-#  stage: test
-#  script:
-#    - docker run -d --env-file=.postgres-env postgres:9.5
-#    - docker run --env-file=.environment --link=postgres:db $CONTAINER_TEST_IMAGE nosetests --with-coverage --cover-erase --cover-package=${CI_PROJECT_NAME} --cover-html
+deploy:
+  stage: deploy
+  before_script:
+    # Login to Gitlab registry
+    - echo $CI_JOB_TOKEN | docker login -u gitlab-ci-token registry.gitlab.com --password-stdin
+    # Login to Google Cloud Registry
+    - echo $GOOGLE_CLOUD_ACCOUNT | docker login -u _json_key --password-stdin https://eu.gcr.io
+  script:
+    - docker pull $GITLAB_IMAGE:$CI_COMMIT_SHA
+    - docker tag $GITLAB_IMAGE:$CI_COMMIT_SHA $GCR_IMAGE:latest
+    - docker push $GCR_IMAGE
