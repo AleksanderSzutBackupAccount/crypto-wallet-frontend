@@ -1,31 +1,69 @@
+image: docker:latest
+
+services:
+  - docker:dind
+
 stages:
+  - compile
   - build
   - test
-  - package
+  - release
+
+cache:
+  key: "$CI_BUILD_REF"
+  paths:
+    - src/static/dist
+
+variables:
+  STAGING_REGISTRY: "my-docker-hub"
+  CONTAINER_TEST_IMAGE: ${STAGING_REGISTRY}/${CI_PROJECT_NAME}:${CI_BUILD_REF_NAME}_${CI_BUILD_REF}_test
+  CONTAINER_RELEASE_IMAGE: ${STAGING_REGISTRY}/${CI_PROJECT_NAME}:${CI_BUILD_REF_NAME}_${CI_BUILD_REF}
+
+before_script:
+  - docker login -u gitlab-ci -p $CI_BUILD_TOKEN $STAGING_REGISTRY
+
+compile:
+  stage: compile
+  image: iteamdev/node-webpack:latest
+  script:
+    - npm run deploy
 
 build:
+  image: docker:19.03.12
   stage: build
-  image: node:14.20-alpine
-  script:
-    - npm ci --only=production
-  artifacts:
-    paths:
-      - node_modules/
-
-unit tests:
-  stage: test
-  image: node:14-alpine
-  before_script:
-    - npm install
-  script:
-    - npm test
-
-build docker image:
-  stage: package
-  image: docker
   services:
-    - docker:dind
+    - docker:19.03.12-dind
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "push"
+  variables:
+    IMAGE_NAME: "my-app"
   script:
-    - echo $CI_REGISTRY_PASSWORD | docker login -u $CI_REGISTRY_USER $CI_REGISTRY --password-stdin
-    - docker build -t $CI_REGISTRY_IMAGE .
-    - docker push $CI_REGISTRY_IMAGE
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+
+    # BUILD IMAGE WITH COMMIT SHA
+
+    - docker build . -t $CI_REGISTRY/$CI_PROJECT_PATH/$IMAGE_NAME:$CI_COMMIT_SHORT_SHA
+
+    # RETAG IMAGE LATEST WITH DIGEST FROM PREVIOUS IMAGE
+
+    - IMAGE_ID=$(docker images | grep $CI_REGISTRY/$CI_PROJECT_PATH\/$IMAGE_NAME | awk '{print $3}')
+    - docker tag $IMAGE_ID $CI_REGISTRY/$CI_PROJECT_PATH/$IMAGE_NAME:latest
+
+    # PUSH IMAGE COMMIT SHA and LATEST
+
+    - docker push $CI_REGISTRY/$CI_PROJECT_PATH/$IMAGE_NAME:$CI_COMMIT_SHORT_SHA
+    - docker push $CI_REGISTRY/$CI_PROJECT_PATH/$IMAGE_NAME:latest
+
+test:
+  stage: test
+  script:
+    - docker run -d --env-file=.postgres-env postgres:9.5
+    - docker run --env-file=.environment --link=postgres:db $CONTAINER_TEST_IMAGE nosetests --with-coverage --cover-erase --cover-package=${CI_PROJECT_NAME} --cover-html
+
+release:
+  stage: release
+  script:
+    - cd src
+    - docker pull $CONTAINER_TEST_IMAGE
+    - docker tag $CONTAINER_TEST_IMAGE $CONTAINER_RELEASE_IMAGE
+    - docker push $CONTAINER_RELEASE_IMAGE
