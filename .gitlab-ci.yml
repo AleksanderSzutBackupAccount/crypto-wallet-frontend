@@ -1,23 +1,5 @@
-image: docker:latest
-
-services:
-  - docker:dind
-
 stages:
   - build
-
-cache:
-  key: "$CI_BUILD_REF"
-  paths:
-    - src/static/dist
-
-variables:
-  STAGING_REGISTRY: "my-docker-hub"
-  CONTAINER_TEST_IMAGE: ${STAGING_REGISTRY}/${CI_PROJECT_NAME}:${CI_BUILD_REF_NAME}_${CI_BUILD_REF}_test
-  CONTAINER_RELEASE_IMAGE: ${STAGING_REGISTRY}/${CI_PROJECT_NAME}:${CI_BUILD_REF_NAME}_${CI_BUILD_REF}
-
-before_script:
-  - docker login -u gitlab-ci -p $CI_BUILD_TOKEN $STAGING_REGISTRY
 
 build:
   image: docker:19.03.12
