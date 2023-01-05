@@ -11,7 +11,7 @@ COPY . .
 RUN npm install -g npm
 RUN npm install
 
-RUN yarn build
+RUN npm run build
 
 FROM nginx:1.23-alpine
 
