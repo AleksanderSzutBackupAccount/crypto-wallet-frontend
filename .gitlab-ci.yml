@@ -1,37 +1,31 @@
 stages:
   - build
   - test
-  - docker-build
+  - package
 
 build:
   stage: build
-  image: node
+  image: node:14.20-alpine
   script:
-    - echo "Start building App"
-    - npm install
-    - npm build
-    - echo "Build successfully!"
+    - npm ci --only=production
   artifacts:
-    expire_in: 1 hour
     paths:
-      - build
       - node_modules/
 
-test:
+unit tests:
   stage: test
-  image: node
-  script:
-    - echo "Testing App"
-    - CI=true npm test
-    - echo "Test successfully!"
-
-docker-build:
-  stage: docker-build
-  image: docker:latest
-  services:
-    - name: docker:19.03.8-dind
+  image: node:14-alpine
   before_script:
-    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+    - npm install
   script:
-    - docker build --pull -t "$CI_REGISTRY_IMAGE" .
-    - docker push "$CI_REGISTRY_IMAGE"
+    - npm test
+
+build docker image:
+  stage: package
+  image: docker
+  services:
+    - docker:dind
+  script:
+    - echo $CI_REGISTRY_PASSWORD | docker login -u $CI_REGISTRY_USER $CI_REGISTRY --password-stdin
+    - docker build -t $CI_REGISTRY_IMAGE .
+    - docker push $CI_REGISTRY_IMAGE
