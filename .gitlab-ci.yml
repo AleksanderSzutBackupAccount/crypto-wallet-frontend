@@ -4,7 +4,6 @@ variables:
   GITLAB_IMAGE: registry.gitlab.com/author-name/my-project
   GCR_IMAGE: eu.gcr.io/my-project/image-name
   NODE_OPTIONS: --max_old_space_size=3584
-
 services:
   - docker:dind
 
