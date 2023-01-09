@@ -65,7 +65,6 @@ export const CurrencyList = ({ nav, setTotalBalance, updateBalance }) => {
     dispatch(clearBalance());
 
     if (currencyVal && ref.current) {
-      // setTimeout(() => {
       for (let i = 0; i < cryptoCoins.length; i++) {
         if (!cryptoCoins[i].is_erc20) {
           dispatch(
@@ -80,6 +79,7 @@ export const CurrencyList = ({ nav, setTotalBalance, updateBalance }) => {
             getErc20Balance({
               address: userCurrency[cryptoCoins[i]?.currency]?.address,
               contract_address: cryptoCoins[i]?.contract_address,
+              chain: cryptoCoins[i]?.chain,
               testnet_type: cryptoCoins[i]?.testnet_type,
               token: cryptoCoins[i]?.currency,
               digits: cryptoCoins[i]?.digits,

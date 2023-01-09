@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
     if (typeof window !== "undefined") {
       setColor(localStorage.getItem("themColor"));
       !localStorage.getItem("currency") &&
-        localStorage.setItem("currency", "AUD");
+        localStorage.setItem("currency", "USD");
     }
   }, []);
 

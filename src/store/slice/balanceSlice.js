@@ -55,7 +55,7 @@ export const getErc20Balance = createAsyncThunk(
   async (data, thunkAPI) => {
     try {
       const response = await AxiosTatum.get(
-        `/blockchain/token/balance/${data.coin}/${data.contract_address}/${data.address}`,
+        `/ethereum/account/balance/${data.chain}/${data.address}?contractAddress=${data.contract_address}`,
         authHeadersTatum(data.testnet_type ? data.testnet_type : "")
       );
 
