@@ -162,38 +162,36 @@ export const CurrencyList = ({ nav, setTotalBalance, updateBalance }) => {
     <>
       {balanceArr?.map((crypto, index) => {
         return (
-          <div key={index}>
-            {nav ? (
-              <Nav.Item className="zl_add_currency_column col" key={index}>
-                <Nav.Link
-                  eventKey={crypto.name}
-                  className="zl_add_currency_inner_content zl_add_bitcoin_currency"
-                >
-                  {chartData && balanceArr.length > 0 && (
-                    <CurrencyBlock
-                      coinMarketData={coinMarketData}
-                      crypto={crypto}
-                      chartData={chartData}
-                      key={index}
-                    />
-                  )}
-                </Nav.Link>
-              </Nav.Item>
-            ) : (
-              <div className="zl_add_currency_column col" key={index}>
-                <div className="zl_add_currency_inner_content">
-                  {chartData && balanceArr.length > 0 && (
-                    <CurrencyBlock
-                      coinMarketData={coinMarketData}
-                      crypto={crypto}
-                      chartData={chartData}
-                      key={index}
-                    />
-                  )}
-                </div>
+          nav ? (
+            <Nav.Item className="zl_add_currency_column col" key={index}>
+              <Nav.Link
+                eventKey={crypto.name}
+                className="zl_add_currency_inner_content zl_add_bitcoin_currency"
+              >
+                {chartData && balanceArr.length > 0 && (
+                  <CurrencyBlock
+                    coinMarketData={coinMarketData}
+                    crypto={crypto}
+                    chartData={chartData}
+                    key={index}
+                  />
+                )}
+              </Nav.Link>
+            </Nav.Item>
+          ) : (
+            <div className="zl_add_currency_column col" key={index}>
+              <div className="zl_add_currency_inner_content">
+                {chartData && balanceArr.length > 0 && (
+                  <CurrencyBlock
+                    coinMarketData={coinMarketData}
+                    crypto={crypto}
+                    chartData={chartData}
+                    key={index}
+                  />
+                )}
               </div>
-            )}
-          </div>
+            </div>
+          )
         );
       })}
     </>
