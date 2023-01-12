@@ -1,12 +1,5 @@
 @import "./theme-config.scss";
 
-/* .zl_wallets_page .zl_add_currency_inner_content.zl_add_litecoin_currency:hover .zl_add_currency_icon_chart .zl_currency_icon svg path:first-child,
-.zl_wallets_page .zl_add_currency_inner_content.zl_add_litecoin_currency.active .zl_add_currency_icon_chart .zl_currency_icon svg path:first-child,
-.zl_history_page .zl_add_currency_inner_content.zl_add_litecoin_currency:hover .zl_add_currency_icon_chart .zl_currency_icon svg path:first-child,
-.zl_history_page .zl_add_currency_inner_content.zl_add_litecoin_currency.active .zl_add_currency_icon_chart .zl_currency_icon svg path:first-child{
-    fill: #fff;
-} */
-
 body {
   font-family: $fontfamily !important;
 }
@@ -968,8 +961,8 @@ table {
     overflow-x: auto;
     padding-bottom: 15px;
     .zl_add_currency_column {
-      max-width: 25%;
-      min-width: 25%;
+      max-width: 100%;
+      min-width: 100%;
       &--button {
         background: $blue-gradient;
       }
