@@ -39,48 +39,48 @@ const Currency = () => {
 
 
     return (<>
-            <section className="zl_currency_page">
-                <HeadingModule name={"Currency"}/>
-                <div className="zl_all_page_comman_content">
-                    <InputGroup className="zl_add_currency_search">
-                        <InputGroup.Text className="zl_add_currency_search_icon">
-                            {searchIcon}
-                        </InputGroup.Text>
-                        <FormControl
-                            placeholder="Search"
-                            type="text"
-                            onChange={searchCurrencyHandler}
-                        />
-                    </InputGroup>
-                    <div className="zl_add_currency_row row">
-                        {cur?.map((item, index) => {
-                            return (<Link
-                                    to={routes.settingsPage}
-                                    onClick={() => {
-                                        navigate(-1);
-                                        localStorage.setItem("currency", item.currency);
-                                    }}
-                                    className={`zl_add_currency_column col`}
-                                    key={index}
-                                >
-                                    <div className="zl_add_currency_inner_content">
-                                        <div className="zl_add_currency_img">
-                                            <img
-                                                src={`assets/image/flags/${item.code}.svg`}
-                                                alt="currency-img"
-                                            />
-                                        </div>
-                                        <div className="zl_add_currency_text">
-                                            <h3>{item.currency}</h3>
-                                            <p>{item.currency_type}</p>
-                                        </div>
-                                    </div>
-                                </Link>);
-                        })}
-                    </div>
+        <section className="zl_currency_page">
+            <HeadingModule name={"Currency"}/>
+            <div className="zl_all_page_comman_content">
+                <InputGroup className="zl_add_currency_search">
+                    <InputGroup.Text className="zl_add_currency_search_icon">
+                        {searchIcon}
+                    </InputGroup.Text>
+                    <FormControl
+                        placeholder="Search"
+                        type="text"
+                        onChange={searchCurrencyHandler}
+                    />
+                </InputGroup>
+                <div className="zl_add_currency_row row">
+                    {cur?.map((item, index) => {
+                        return (<Link
+                            to={routes.settingsPage}
+                            onClick={() => {
+                                navigate(-1);
+                                localStorage.setItem("currency", item.currency);
+                            }}
+                            className={`zl_add_currency_column col`}
+                            key={index}
+                        >
+                            <div className="zl_add_currency_inner_content">
+                                <div className="zl_add_currency_img">
+                                    <img
+                                        src={`assets/image/flags/${item.code}.svg`}
+                                        alt="currency-img"
+                                    />
+                                </div>
+                                <div className="zl_add_currency_text">
+                                    <h3>{item.currency}</h3>
+                                    <p>{item.currency_type}</p>
+                                </div>
+                            </div>
+                        </Link>);
+                    })}
                 </div>
-            </section>
-        </>);
+            </div>
+        </section>
+    </>);
 };
 
 export default Currency;

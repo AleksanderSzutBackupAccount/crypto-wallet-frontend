@@ -77,11 +77,11 @@ const AddCurrency = () => {
 
   const search = (event) => {
     event.preventDefault();
-    const regex = new RegExp(event.target.value, "i");
+    const regex = new RegExp(event.target.value.toLowerCase(), "i");
     const filtered = addCurrency.filter((item) => {
       return (
-        (item["coingecko_coin_name"].search(regex) &&
-          item["coingecko_coin_name"].search(regex)) > -1
+          item["coingecko_coin_name"].search(regex) > -1 ||
+          item["currency"].search(regex) > -1
       );
     });
     setFilterData(filtered);
