@@ -1,6 +1,7 @@
 FROM node:14.20-bullseye-slim
 
 ENV NODE_ENV development
+ENV PORT 80
 
 WORKDIR /app
 

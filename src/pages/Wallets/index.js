@@ -56,7 +56,7 @@ const Wallets = () => {
         value?.is_erc20
           ? getErc20Transactions({
               address: currencyAddress,
-              chain: value.chain,
+              chain: value.moralis_api_chain,
               contract_address: value?.contract_address,
             })
           : getTransactions({

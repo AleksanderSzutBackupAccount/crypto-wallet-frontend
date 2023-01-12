@@ -64,6 +64,7 @@ export const CurrencyList = ({ nav, setTotalBalance, updateBalance }) => {
   useEffect(async () => {
     dispatch(clearBalance());
 
+    console.log("xdd1");
     if (currencyVal && ref.current) {
       for (let i = 0; i < cryptoCoins.length; i++) {
         if (!cryptoCoins[i].is_erc20) {

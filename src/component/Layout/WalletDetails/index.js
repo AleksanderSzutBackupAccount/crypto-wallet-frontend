@@ -195,7 +195,7 @@ const WalletDetails = (props) => {
                 onClick={() => handleToggle(keyCoin)}
               >
                 <div class="zl_wallet_chart_recive_btn_inner">
-                  <img src="assets/image/receive-icon.svg" alt="" width="18px" height="18px"/>
+                  <img src="docs/assets/image/receive-icon.svg" alt="" width="18px" height="18px"/>
                 </div>
               </Button>
             </div>

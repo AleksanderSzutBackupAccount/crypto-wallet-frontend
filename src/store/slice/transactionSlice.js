@@ -33,7 +33,6 @@ export const getTransactions = createAsyncThunk(
         console.log("responseDATA)))", [data.coin], response.data);
         return { [data.coin]: response.data };
       } else {
-        // const response = await AxiosTatum.get(`/`)
         const response = await AxiosMoralis.get(
           `/${data.address}?chain=${data.chain}&limit=20`,
           authHeadersMoralis()
@@ -67,6 +66,7 @@ export const getErc20Transactions = createAsyncThunk(
   "getErc20Transactions",
   async (data, thunkAPI) => {
     try {
+      console.log(data);
       const response = await AxiosMoralis.get(
         `/${data.address}/erc20/transfers?chain=${data.chain}`,
         authHeadersMoralis()

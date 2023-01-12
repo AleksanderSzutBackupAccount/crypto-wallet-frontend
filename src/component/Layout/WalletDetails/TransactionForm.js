@@ -27,29 +27,6 @@ const TransactionForm = ({
   const [feeErr, setFeeErr] = useState("");
 
   const currency = localStorage.getItem("currency")?.toLowerCase();
-  // console.log(
-  //   "currencyKKK",
-  //   keyCoin,
-  //   coin_type,
-  //   is_erc20,
-  //   coin_name,
-  //   currency,
-  //   tatum_coin_name
-  // );
-
-  useEffect(() => {
-    if (is_erc20) {
-      dispatch(
-        coinBasedTokenBalance({
-          coin_type: "ethereum",
-          address: JSON.parse(
-            localStorage.getItem("user_crypto_currency_data")
-          )[keyCoin]?.address,
-          coin: tatum_coin_name,
-        })
-      );
-    }
-  }, [currency, dispatch, is_erc20, tatum_coin_name]);
 
   const tokenBasedCoinBalance = useSelector(
     (state) => state.balance.tokenBalance
@@ -313,10 +290,11 @@ const TransactionForm = ({
       //TODO validation if enough balance
       const coinClass = (await import(`../../CurrencyHelpers/${keyCoin}`))
         .default;
+      console.log(insertAmount, coinBalance)
       const sendTransaction = await new coinClass({
         amount:
           insertAmount === coinBalance.toFixed(6)
-            ? insertAmount - validTransactionFees
+            ? (insertAmount - validTransactionFees).toFixed(6)
             : insertAmount,
         to: insertAddress,
         fee: transactionFees,

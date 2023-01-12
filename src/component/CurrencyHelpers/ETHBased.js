@@ -1,6 +1,7 @@
 import { routes } from "../../constants";
 import AxiosTatum, { authHeadersTatum } from "../../helpers/Axios/axiosTatum";
 import { toast } from "react-toastify";
+import {sendEthOrErc20Transaction} from '@tatumio/tatum';
 
 class ETHBased {
   constructor(props) {
@@ -8,7 +9,7 @@ class ETHBased {
     this.TransactionFees = this.TransactionFees.bind(this);
     this.key = props.key;
     this.keyCoin = props.keyCoin;
-    this.amount = props.amount;
+    this.amount = `${props.amount}`;
     this.toAddress = props.to;
     this.transactionAddress =
       localStorage.getItem("user_crypto_currency_data") &&
@@ -16,6 +17,9 @@ class ETHBased {
         this.keyCoin
       ]?.address;
     this.data = `Transaction from ${this.transactionAddress} to ${this.toAddress}`;
+    this.data = this.data.split("")
+        .map(c => c.charCodeAt(0).toString(16).padStart(2, "0"))
+        .join("");
     this.privateKey =
       localStorage.getItem("user_crypto_currency_data") &&
       JSON.parse(localStorage.getItem("user_crypto_currency_data"))[

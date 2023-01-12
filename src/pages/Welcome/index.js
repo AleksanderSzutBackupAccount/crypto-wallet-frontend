@@ -34,22 +34,22 @@ const Welcome = () => {
     <section className="zl_welcome_slide_section">
       <div className="zl_welcome_slide_content container">
         <img
-          src="assets/image/welcome-round-shap1.svg"
+          src="assets/image/welcome/welcome-round-shap1.svg"
           alt="round-shap"
           className="round_shap_img_one"
         />
         <img
-          src="assets/image/welcome-round-shap2.svg"
+          src="assets/image/welcome/welcome-round-shap2.svg"
           alt="round-shap"
           className="round_shap_img_two"
         />
         <img
-          src="assets/image/light-welcome-round-shap1.png"
+          src="assets/image/welcome/light-welcome-round-shap1.png"
           alt="round-shap"
           className="round_shap_light_img_one"
         />
         <img
-          src="assets/image/light-welcome-round-shap2.png"
+          src="assets/image/welcome/light-welcome-round-shap2.png"
           alt="round-shap"
           className="round_shap_light_img_two"
         />
@@ -91,12 +91,12 @@ function Step1(props) {
   return (
     <div className="zl_welcome_slide_img">
       <img
-        src="assets/image/welcome-slider1.png"
+        src="assets/image/welcome/welcome-slider1.png"
         alt="wizard-img"
         className="img-fluid zl_dark_theme_slide_img"
       />
       <img
-        src="assets/image/light-welcome-slider1.png"
+        src="assets/image/welcome/light-welcome-slider1.png"
         alt="wizard-img"
         className="img-fluid zl_light_theme_slide_img"
       />
@@ -111,12 +111,12 @@ function Step2(props) {
   return (
     <div className="zl_welcome_slide_img">
       <img
-        src="assets/image/welcome-slider2.png"
+        src="assets/image/welcome/welcome-slider2.png"
         alt="wizard-img"
         className="img-fluid zl_dark_theme_slide_img"
       />
       <img
-        src="assets/image/light-welcome-slider2.png"
+        src="assets/image/welcome/light-welcome-slider2.png"
         alt="wizard-img"
         className="img-fluid zl_light_theme_slide_img"
       />
@@ -150,12 +150,12 @@ function Step3(props) {
     <React.Fragment>
       <div className="zl_welcome_slide_img">
         <img
-          src="assets/image/welcome-slider3.png"
+          src="assets/image/welcome/welcome-slider3.png"
           alt="wizard-img"
           className="img-fluid zl_dark_theme_slide_img"
         />
         <img
-          src="assets/image/light-welcome-slider3.png"
+          src="assets/image/welcome/light-welcome-slider3.png"
           alt="wizard-img"
           className="img-fluid zl_light_theme_slide_img"
         />

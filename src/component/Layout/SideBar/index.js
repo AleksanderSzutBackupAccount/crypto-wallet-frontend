@@ -38,17 +38,17 @@ const Header = ({ title }) => {
             </button>
             <Link to={routes.dashboardPage}>
               <img
-                src="assets/image/Logo.svg"
+                src="docs/assets/image/Logo.svg"
                 alt="logo"
                 className="img-fluid zl_main_logo"
               />
               <img
-                src="assets/image/favicon.svg"
+                src="docs/assets/image/favicon.svg"
                 alt="logo"
                 className="img-fluid zl_mini_sidebar_logo"
               />
               <img
-                src="assets/image/light-Logo.svg"
+                src="docs/assets/image/light-Logo.svg"
                 alt="light-logo"
                 className="img-fluid zl_light_theme_logo d-none"
               />
@@ -124,7 +124,7 @@ const Header = ({ title }) => {
             className="zl_page_sidebar_toggle_icon"
             onClick={handleToggle}
           >
-            <img src="assets/image/right-two-arrow.svg" alt="right-two-arrow" />
+            <img src="docs/assets/image/right-two-arrow.svg" alt="right-two-arrow" />
           </button>
         </div>
       </section>

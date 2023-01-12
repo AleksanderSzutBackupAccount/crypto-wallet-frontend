@@ -4,4 +4,11 @@ node_modules
 Dockerfile
 Dockerfile.prod
 logs
-*.log
+*.log*
+chrome-user-data
+*.sublime-project
+*.sublime-workspace
+.idea
+*.swp
+*.swo
+.DS_STORE
