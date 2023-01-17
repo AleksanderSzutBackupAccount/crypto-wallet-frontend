@@ -1,5 +1,7 @@
 export const routes = {
   welcomePage: "/",
+  pinPage: "/pin",
+  restorePage: "/restore",
   portfolioPage: "/portfolio",
   dashboardPage: "/dashboard",
   addCurrencyPage: "/addcurrency",
@@ -9,7 +11,6 @@ export const routes = {
   settingsPage: "/settings",
   restoreWalletPage: "/restorewallet",
   currencyPage: "/currency",
-
   loginPage: "/login",
   signup: "/signup",
   logout: "/logout",
