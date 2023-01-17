@@ -4,7 +4,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Chart from "react-apexcharts";
 import { Link } from "react-router-dom";
-import { routes } from "../../constants";
+import { RouteEnum } from "../../routes/RouteEnum";
 import { CurrencyList } from "../../component/Common/Currency/CurrencyList";
 import { DashboardData } from "../../constantsData";
 
@@ -133,7 +133,7 @@ const Dashboard = () => {
             />
             <div className="zl_add_currency_column col zl_add_currency_column--button">
               <Link
-                to={routes.addCurrencyPage}
+                to={RouteEnum.addCurrencyPage}
                 className="zl_add_currency_btn_content"
               >
                 Add Currency

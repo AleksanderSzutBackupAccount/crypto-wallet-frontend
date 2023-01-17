@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import HeadingModule from "../../component/Layout/Header";
-import { routes } from "../../constants";
+import { RouteEnum } from "../../routes/RouteEnum";
 import { loginPageAction } from "../../store/slice/authSlice";
 
 const RestoreWallet = () => {
@@ -41,7 +41,7 @@ const RestoreWallet = () => {
             }
             if (response) {
               console.log("response", response);
-              navigate(routes.dashboardPage);
+              navigate(RouteEnum.dashboardPage);
             }
           },
         })

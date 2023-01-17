@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {useDispatch} from "react-redux";
 import {useNavigate} from "react-router-dom";
-import {routes} from "../../constants";
+import {RouteEnum} from "../../routes/RouteEnum";
 import {loginPageAction} from "../../store/slice/authSlice";
 
 
@@ -51,7 +51,7 @@ const Restore = () => {
                             console.log("err", err);
                         }
                         if (response) {
-                            navigate(routes.dashboardPage);
+                            navigate(RouteEnum.dashboardPage);
                         }
                     },
                 })
@@ -69,7 +69,7 @@ const Restore = () => {
                         console.log(err);
                     }
                     if (response) {
-                        navigate(routes.dashboardPage);
+                        navigate(RouteEnum.dashboardPage);
                     }
                 },
             })

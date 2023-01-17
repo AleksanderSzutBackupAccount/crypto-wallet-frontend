@@ -3,7 +3,7 @@ import {InputGroup, FormControl} from "react-bootstrap";
 import HeadingModule from "../../component/Layout/Header";
 import {searchIcon} from "../../icons";
 import {Link, useNavigate} from "react-router-dom";
-import {routes} from "../../constants";
+import {RouteEnum} from "../../routes/RouteEnum";
 
 const Currency = () => {
     const navigate = useNavigate();
@@ -55,7 +55,7 @@ const Currency = () => {
                 <div className="zl_add_currency_row row">
                     {cur?.map((item, index) => {
                         return (<Link
-                            to={routes.settingsPage}
+                            to={RouteEnum.settingsPage}
                             onClick={() => {
                                 navigate(-1);
                                 localStorage.setItem("currency", item.currency);

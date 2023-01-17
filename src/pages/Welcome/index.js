@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { routes } from "../../constants";
+import { RouteEnum } from "../../routes/RouteEnum";
 import { loginPageAction } from "../../store/slice/authSlice";
 
 const Welcome = () => {
@@ -139,7 +139,7 @@ function Step3(props) {
             console.log(err);
           }
           if (response) {
-            navigate(routes.dashboardPage);
+            navigate(RouteEnum.dashboardPage);
           }
         },
       })
@@ -166,7 +166,7 @@ function Step3(props) {
       >
         Get Started
       </button>
-      <Link to={routes.loginPage} className="zl_welcome_slide_already_wallet">
+      <Link to={RouteEnum.loginPage} className="zl_welcome_slide_already_wallet">
         I already have wallet
       </Link>
     </React.Fragment>

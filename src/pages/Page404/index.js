@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { routes } from "../../constants";
+import { RouteEnum } from "../../routes/RouteEnum";
 
 const texts = {
   title: "404",
@@ -15,7 +15,7 @@ const Page404 = () => {
       <p>{texts.title}</p>
       <p>{texts.subTitle}</p>
       <div>
-        <Link to={routes.dashboardPage}>{texts.backToDashboard}</Link>
+        <Link to={RouteEnum.dashboardPage}>{texts.backToDashboard}</Link>
       </div>
     </div>
   );

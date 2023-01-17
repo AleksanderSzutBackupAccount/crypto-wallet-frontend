@@ -1,6 +1,6 @@
 import AxiosTatum, { authHeadersTatum } from "../../helpers/Axios/axiosTatum";
 import { toast } from "react-toastify";
-import { routes } from "../../constants";
+import { RouteEnum } from "../../routes/RouteEnum";
 
 class BTCBased {
   constructor(props) {
@@ -91,7 +91,7 @@ class BTCBased {
         toast.success(`${this.keyCoin} Transaction Completed Successfully !`, {
           autoClose: 2000,
         });
-        data.navigate(routes.walletsPage);
+        data.navigate(RouteEnum.walletsPage);
       }
       console.log("response", response.data);
       return response.data;

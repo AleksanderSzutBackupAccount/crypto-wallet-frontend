@@ -1,4 +1,4 @@
-import { routes } from "../../constants";
+import { RouteEnum } from "../../routes/RouteEnum";
 import AxiosTatum, { authHeadersTatum } from "../../helpers/Axios/axiosTatum";
 import { toast } from "react-toastify";
 
@@ -73,7 +73,7 @@ class ERC20Based {
         toast.success(`${this.key} Transaction Completed Successfully !`, {
           autoClose: 2000,
         });
-        data.navigate(routes.walletsPage);
+        data.navigate(RouteEnum.walletsPage);
       }
       return response.data;
     } catch (error) {

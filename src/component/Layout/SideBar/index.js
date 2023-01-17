@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { routes } from "../../../constants";
+import { RouteEnum } from "../../../routes/RouteEnum";
 import {
   closeIcon,
   dashboardIcon,
@@ -36,7 +36,7 @@ const Header = ({ title }) => {
             >
               {closeIcon}
             </button>
-            <Link to={routes.dashboardPage}>
+            <Link to={RouteEnum.dashboardPage}>
               <img
                 src="assets/image/Logo.svg"
                 alt="logo"
@@ -57,7 +57,7 @@ const Header = ({ title }) => {
           <ul className="zl_page_sidebar_nav">
             <li className="zl_page_sidebar_items" title="dashboard">
               <Link
-                to={routes.dashboardPage}
+                to={RouteEnum.dashboardPage}
                 className="zl_page_sidebar_link position-relative"
               >
                 {dashboardIcon}
@@ -66,7 +66,7 @@ const Header = ({ title }) => {
             </li>
             <li className="zl_page_sidebar_items" title="portfolio">
               <Link
-                to={routes.portfolioPage}
+                to={RouteEnum.portfolioPage}
                 className="zl_page_sidebar_link position-relative"
               >
                 {portfolioIcon}
@@ -75,7 +75,7 @@ const Header = ({ title }) => {
             </li>
             <li className="zl_page_sidebar_items" title="wallets">
               <Link
-                to={routes.walletsPage}
+                to={RouteEnum.walletsPage}
                 className="zl_page_sidebar_link position-relative"
               >
                 {walletIcon}
@@ -85,7 +85,7 @@ const Header = ({ title }) => {
             </li>
             <li className="zl_page_sidebar_items" title="history">
               <Link
-                to={routes.historyPage}
+                to={RouteEnum.historyPage}
                 className="zl_page_sidebar_link position-relative"
               >
                 {historyIcon}
@@ -94,7 +94,7 @@ const Header = ({ title }) => {
             </li>
             <li className="zl_page_sidebar_items" title="securebackup">
               <Link
-                to={routes.secureBackupPage}
+                to={RouteEnum.secureBackupPage}
                 className="zl_page_sidebar_link position-relative"
               >
                 {securityIcon}
@@ -103,7 +103,7 @@ const Header = ({ title }) => {
             </li>
             <li className="zl_page_sidebar_items" title="settings">
               <Link
-                to={routes.settingsPage}
+                to={RouteEnum.settingsPage}
                 className="zl_page_sidebar_link position-relative"
               >
                 {settingIcon}

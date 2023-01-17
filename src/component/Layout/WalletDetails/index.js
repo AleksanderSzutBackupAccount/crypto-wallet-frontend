@@ -11,7 +11,7 @@ import {
   receiveWhiteIcon,
   sendWhiteIcon,
 } from "../../../icons";
-import { routes } from "../../../constants";
+import { RouteEnum } from "../../../routes/RouteEnum";
 import TransactionForm from "./TransactionForm";
 import { getCoinLargeChart } from "../../../store/slice/chartSlice";
 import CmnTransactions from "../TransactionList/CmnTransactions";
@@ -215,7 +215,7 @@ const WalletDetails = (props) => {
         <div className="zl_transaction_list">
           <h3 className="zl_transaction_list_main_heading">
             Transaction
-            <Link to={routes.historyPage}>See All</Link>
+            <Link to={RouteEnum.historyPage}>See All</Link>
           </h3>
           {transactions && transactions.length > 0 ? (
             <CmnTransactions transactions={transactions} />

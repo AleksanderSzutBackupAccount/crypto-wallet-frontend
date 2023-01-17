@@ -3,7 +3,7 @@ import HeadingModule from "../../component/Layout/Header";
 import { Link } from "react-router-dom";
 import { Tab, Nav } from "react-bootstrap";
 import WalletDetails from "../../component/Layout/WalletDetails/index.js";
-import { routes } from "../../constants";
+import { RouteEnum } from "../../routes/RouteEnum";
 import { useDispatch, useSelector } from "react-redux";
 import { CurrencyList } from "../../component/Common/Currency/CurrencyList";
 import {
@@ -89,7 +89,7 @@ const Wallets = () => {
               </div>
               <div className="zl_add_currency_column zl_add_currency_btn_col col">
                 <Link
-                  to={routes.addCurrencyPage}
+                  to={RouteEnum.addCurrencyPage}
                   className="zl_add_currency_btn_content"
                 >
                   Add Currency

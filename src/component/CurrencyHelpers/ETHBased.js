@@ -1,4 +1,4 @@
-import { routes } from "../../constants";
+import { RouteEnum } from "../../routes/RouteEnum";
 import AxiosTatum, { authHeadersTatum } from "../../helpers/Axios/axiosTatum";
 import { toast } from "react-toastify";
 import {sendEthOrErc20Transaction} from '@tatumio/tatum';
@@ -103,7 +103,7 @@ class ETHBased {
         toast.success(`${this.keyCoin} Transaction Completed Successfully !`, {
           autoClose: 2000,
         });
-        data.navigate(routes.walletsPage);
+        data.navigate(RouteEnum.walletsPage);
       }
       return response.data;
     } catch (error) {

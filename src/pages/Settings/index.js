@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import HeadingModule from "../../component/Layout/Header";
-import Form from "react-bootstrap/Form";
 import { Link } from "react-router-dom";
-import { routes } from "../../constants";
+import { RouteEnum } from "../../routes/RouteEnum";
 
 const Setting = ({ themHandler }) => {
   const [color, setColor] = useState(true);
@@ -37,7 +36,7 @@ const Setting = ({ themHandler }) => {
               defaultChecked
             />
           </div> */}
-          <Link to={routes.currencyPage} className="zl_setting_list_items">
+          <Link to={RouteEnum.currencyPage} className="zl_setting_list_items">
             <div className="zl_setting_items_heading_peregraph">
               <h3>Currency</h3>
               <p>Set your preferred local currency.</p>
@@ -59,7 +58,7 @@ const Setting = ({ themHandler }) => {
               </svg>
             </div>
           </Link>
-          <Link to={routes.restoreWalletPage} className="zl_setting_list_items">
+          <Link to={RouteEnum.restoreWalletPage} className="zl_setting_list_items">
             <div className="zl_setting_items_heading_peregraph">
               <h3>Restore Wallet</h3>
               <p>

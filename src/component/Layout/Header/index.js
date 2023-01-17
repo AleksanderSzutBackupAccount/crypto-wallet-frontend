@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { routes } from "../../../constants";
+import { RouteEnum } from "../../../routes/RouteEnum";
 import { useDispatch } from "react-redux";
 import { logout } from "../../../store/slice/authSlice";
 
@@ -209,7 +209,7 @@ const Header = (props) => {
             </Dropdown.Menu>
           </Dropdown> */}
           <Link
-            to={routes.welcomePage}
+            to={RouteEnum.welcomePage}
             onClick={logoutHandler}
             className="zl_all_page_logout_btn"
           >
