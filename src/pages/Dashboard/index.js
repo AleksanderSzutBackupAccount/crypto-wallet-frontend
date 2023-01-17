@@ -97,31 +97,6 @@ const Dashboard = () => {
             <h2 className="zl_all_page_total_price_text">
               ${totalBalance.toFixed(4)}
             </h2>
-            {/* <span className="zl_all_page_total_price_up_text">
-              <svg
-                width="8"
-                height="8"
-                viewBox="0 0 8 8"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M4 6.66668V1.33334"
-                  stroke="#50E2C2"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M2 3.33334L4 1.33334L6 3.33334"
-                  stroke="#50E2C2"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              7,00%
-            </span> */}
           </div>
         </div>
         <div className="zl_add_currency_content">
