@@ -9,13 +9,9 @@ function App() {
     localStorage.getItem("user_crypto_currency_data") &&
     JSON.parse(localStorage.getItem("user_crypto_currency_data"));
 
-  const logged =
-    localStorage.getItem("loggedData") &&
-    JSON.parse(localStorage.getItem("loggedData"));
+  const logged = user_crypto_currency_data && sessionStorage.getItem('logged');
 
-  console.log(logged);
-
-  const routing = useRoutes(getRoutes(user_crypto_currency_data));
+  const routing = useRoutes(getRoutes(user_crypto_currency_data, logged));
 
   return <Layout>{routing}</Layout>;
 }

@@ -81,10 +81,13 @@ const authSlice = createSlice({
     reducers: {
         logout: (state) => {
             state.user = null;
-            localStorage.removeItem("user_crypto_currency_data");
-            localStorage.removeItem("checkCrypto");
-            localStorage.removeItem("mnemonics");
-            localStorage.removeItem("ethereum");
+
+            sessionStorage.removeItem('logged');
+
+            // localStorage.removeItem("user_crypto_currency_data");
+            // localStorage.removeItem("checkCrypto");
+            // localStorage.removeItem("mnemonics");
+            // localStorage.removeItem("ethereum");
         },
     },
     extraReducers: (builder) => {

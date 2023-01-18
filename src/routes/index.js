@@ -18,17 +18,16 @@ import CreateNewWallet from "../pages/CreateNewWallet";
 
 import {RouteEnum} from "./RouteEnum";
 
-const getRoutes = (user_crypto_currency_data) => [
+const getRoutes = (user_crypto_currency_data, logged) => [
     {
         path: RouteEnum.welcomePage,
-        element: !user_crypto_currency_data ? (
+        element: !user_crypto_currency_data && !logged ? (
             <Outlet/>
         ) : (
             <Navigate to={RouteEnum.dashboardPage}/>
         ),
         children: [
             {path: RouteEnum.welcomePage, element: <WelcomeModule/>},
-            {path: RouteEnum.loginPage, element: <LogIn/>},
             {path: RouteEnum.pinPage, element: <Pin/>,},
             {path: RouteEnum.restorePage, element: <Restore/>,},
             {path: RouteEnum.createNewWalletPage, element: <CreateNewWallet/>,},
@@ -37,6 +36,21 @@ const getRoutes = (user_crypto_currency_data) => [
     {
         path: RouteEnum.welcomePage,
         element: user_crypto_currency_data ? (
+            logged ? (
+                <Navigate to={RouteEnum.dashboardPage}/>
+                ) : (
+                <Outlet/>
+            )
+        ) : (
+            <Navigate to={RouteEnum.createNewWalletPage}/>
+        ),
+        children: [
+            {path: RouteEnum.loginPage, element: <LogIn/>},
+        ],
+    },
+    {
+        path: RouteEnum.welcomePage,
+        element: logged ? (
             <Outlet/>
         ) : (
             <Navigate to={RouteEnum.loginPage}/>
@@ -55,7 +69,7 @@ const getRoutes = (user_crypto_currency_data) => [
     },
     {
         path: "",
-        element: !user_crypto_currency_data ? (
+        element: !logged ? (
             <Navigate to={RouteEnum.welcomePage}/>
         ) : (
             <Page404/>
