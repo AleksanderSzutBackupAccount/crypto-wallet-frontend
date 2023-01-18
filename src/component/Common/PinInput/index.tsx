@@ -1,5 +1,4 @@
 import React, {useEffect, useRef} from 'react';
-import {StyledPinInput, ValidationResultParagraph} from './Pin.Components';
 import {removeValuesFromArray} from './pin.utils';
 
 interface PinInputGridProps {
@@ -81,9 +80,8 @@ const PinInput: React.FC<PinInputGridProps> = ({
             <div>
                 {Array.from({length: pinLength}, (_, index) => (
                     <label className={`pin-input ${pin[index] !== undefined ? 'pin-input--active' : ''}`}>
-                        <StyledPinInput
+                        <input
                             disabled={isValidating}
-                            isCorrect={validationResult}
                             onKeyDown={(event: React.KeyboardEvent<HTMLInputElement>) => onKeyDown(event, index)}
                             type="password"
                             key={index}
