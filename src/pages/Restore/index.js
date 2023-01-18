@@ -2,14 +2,11 @@ import React, {useState} from "react";
 import {useDispatch} from "react-redux";
 import {useNavigate} from "react-router-dom";
 import {RouteEnum} from "../../routes/RouteEnum";
-import {loginPageAction} from "../../store/slice/authSlice";
 
 
 const Restore = () => {
-    const dispatch = useDispatch();
     const navigate = useNavigate();
     const [words, setWords] = useState([]); // already created account 12 words observe dance pledge catch gun tuna head sort salute giggle gown resource
-    const [pin, setPin] = useState(""); // already created account 12 words observe dance pledge catch gun tuna head sort salute giggle gown resource
     const [err, setErr] = useState("");
 
 
@@ -32,48 +29,16 @@ const Restore = () => {
         return valid;
     };
 
-    const createPinHandler = () => {
-        if (validate()) {
-
-        }
-    };
-
     const loginHandler = () => {
         if (validate()) {
-            dispatch(
-                loginPageAction({
-                    params: {
-                        mnemonics: words.join(" "),
-                        pin: pin
-                    },
-                    cb: (err, response) => {
-                        if (err) {
-                            console.log("err", err);
-                        }
-                        if (response) {
-                            navigate(RouteEnum.dashboardPage);
-                        }
-                    },
-                })
-            );
+            localStorage.setItem("mnemonics", words.join(" "));
+            navigate(RouteEnum.createNewWalletPage);
         }
     };
 
 
     const createWalletHandler = () => {
-        dispatch(
-            loginPageAction({
-                params: null,
-                cb: (err, response) => {
-                    if (err) {
-                        console.log(err);
-                    }
-                    if (response) {
-                        navigate(RouteEnum.dashboardPage);
-                    }
-                },
-            })
-        );
+        navigate(RouteEnum.createNewWalletPage);
     };
     return (
         <section className="zl_login_section">

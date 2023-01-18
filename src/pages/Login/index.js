@@ -1,15 +1,17 @@
-import React, {useState} from 'react';
-import {useDispatch} from "react-redux";
+import React, {useState, useEffect} from 'react';
 import {Link, useNavigate} from "react-router-dom";
 
 import PinInput from "../../component/Common/PinInput";
 import {authPin} from "../../api/authPin";
 import {RouteEnum} from "../../routes/RouteEnum";
+import { useDispatch } from "react-redux";
+import { deleteWallet } from "../../store/slice/authSlice";
 
 const PIN_LENGTH = 6;
 
 const LogIn = () => {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const [pin, setPin] = useState(
         new Array(PIN_LENGTH)
@@ -31,44 +33,50 @@ const LogIn = () => {
 
         try {
             await authPin(pin.join(''));
-            console.log('sukces');
-            return true;
+            sessionStorage.setItem("logged", true);
+            navigate(RouteEnum.dashboardPage);
         } catch (e) {
             console.log('błąd');
             setValidationError(e);
             setPin(new Array(PIN_LENGTH));
-            return false;
         } finally {
             setIsValidating(false);
         }
 
     };
-    const loginHandler = async () => {
-        if (await validatePin()) {
-            sessionStorage.setItem("logged", true);
-            navigate(RouteEnum.dashboardPage);
-        }
-    };
 
-        return (
+    useEffect(async () => {
+        const checkPin = async () => {
+            if (!pin.includes(undefined)) {
+                await validatePin();
+            }
+        };
+
+        await checkPin();
+    }, [pin, validatePin]);
+
+    const deleteWalletHandler = () => {
+        dispatch(deleteWallet());
+    }
+
+    return (
         <section className="zl_login_section">
             <div className="zl_login_content container">
-                <div className="zl_all_page_heading_section">
-                    <div className="zl_all_page_heading">
-                        <h2>Create New Wallet</h2>
+                <div className="zl_all_page_heading_section justify-content-center">
+                    <div className="zl_all_page_heading text-center">
+                        <h2>Login to Wallet</h2>
                     </div>
                 </div>
                 <div className="zl_login_heading_text">
-                    <h3 className="zl_login_heading">Create PIN</h3>
+                    <h3 className="zl_login_heading">WRITE PIN</h3>
                     <p className="zl_login_peregraph">
-                        Set Pin of your Chainex Wallet
+                        Login to Chainex Wallet with your PIN
                     </p>
                 </div>
                 <div className="center-auth">
                     <div>
                         <div className="zl_login_row row justify-content-center">
                             <div className="input-pin-group">
-                                <h4 className="input-pin-group__heading">New PIN (6 chrs)</h4>
                                 <PinInput
                                     isValidating={isValidating}
                                     validationResult={true}
@@ -84,10 +92,13 @@ const LogIn = () => {
                 <div className="zl_login_btn justify-content-center d-flex flex-column ">
                     <button
                         className="mx-auto zl_login_btn_link"
-                        onClick={() => loginHandler()}
                     >
                         Login
                     </button>
+
+                    <Link to={RouteEnum.restorePage} className="mx-auto my-4 zl_link_button cent" onClick={() => deleteWalletHandler()}>
+                        Delete current wallet(Use it to restore Wallet)
+                    </Link>
                 </div>
             </div>
         </section>

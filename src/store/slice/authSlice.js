@@ -83,12 +83,17 @@ const authSlice = createSlice({
             state.user = null;
 
             sessionStorage.removeItem('logged');
-
-            // localStorage.removeItem("user_crypto_currency_data");
-            // localStorage.removeItem("checkCrypto");
-            // localStorage.removeItem("mnemonics");
-            // localStorage.removeItem("ethereum");
         },
+        deleteWallet: (state) => {
+            state.user = null;
+
+            sessionStorage.removeItem("logged")
+            localStorage.removeItem("user_crypto_currency_data");
+            localStorage.removeItem("checkCrypto");
+            localStorage.removeItem("user_pin_code");
+            localStorage.removeItem("mnemonics");
+            localStorage.removeItem("ethereum");
+        }
     },
     extraReducers: (builder) => {
         builder.addCase(loginPageAction.pending, (state) => {
@@ -106,5 +111,6 @@ const authSlice = createSlice({
 });
 
 export const {logout} = authSlice.actions;
+export const {deleteWallet} = authSlice.actions;
 
 export default authSlice.reducer;

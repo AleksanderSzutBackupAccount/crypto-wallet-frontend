@@ -50,6 +50,7 @@ ul {
 
   .zl_page_sidebar[title="login"],
   .zl_page_sidebar[title="restore"],
+  .zl_page_sidebar[title="restore-wallet"],
   .zl_page_sidebar[title="create-new-wallet"],
   .zl_page_sidebar[title="pin"] {
     display: none;
@@ -604,7 +605,6 @@ table {
 
     .zl_login_heading_text {
       text-align: center;
-      border-bottom: 1px solid $color25;
       margin-bottom: 25px;
 
       .zl_login_heading {

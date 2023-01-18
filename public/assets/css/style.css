@@ -42,12 +42,14 @@ ul {
 }
 .zl_all_pages_content .zl_page_sidebar[title=login],
 .zl_all_pages_content .zl_page_sidebar[title=restore],
+.zl_all_pages_content .zl_page_sidebar[title=restore-wallet],
 .zl_all_pages_content .zl_page_sidebar[title=create-new-wallet],
 .zl_all_pages_content .zl_page_sidebar[title=pin] {
   display: none;
 }
 .zl_all_pages_content .zl_page_sidebar[title=login] ~ .zl_all_pages_inner_content,
 .zl_all_pages_content .zl_page_sidebar[title=restore] ~ .zl_all_pages_inner_content,
+.zl_all_pages_content .zl_page_sidebar[title=restore-wallet] ~ .zl_all_pages_inner_content,
 .zl_all_pages_content .zl_page_sidebar[title=create-new-wallet] ~ .zl_all_pages_inner_content,
 .zl_all_pages_content .zl_page_sidebar[title=pin] ~ .zl_all_pages_inner_content {
   padding: 0;
@@ -415,7 +417,6 @@ table td {
 }
 .zl_login_section .zl_login_content .zl_login_heading_text {
   text-align: center;
-  border-bottom: 1px solid rgba(132, 142, 174, 0.1490196078);
   margin-bottom: 25px;
 }
 .zl_login_section .zl_login_content .zl_login_heading_text .zl_login_heading {

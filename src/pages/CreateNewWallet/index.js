@@ -13,6 +13,8 @@ const CreateNewWallet = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
+    const mnemonics = localStorage.getItem('mnemonics');
+
     const [pin, setPin] = useState(
         new Array(PIN_LENGTH)
     );
@@ -58,7 +60,7 @@ const CreateNewWallet = () => {
             dispatch(
                 loginPageAction({
                     params: {
-                        mnemonics: undefined,
+                        mnemonics: mnemonics,
                         pin: pin.join('')
                     },
                     cb: (err, response) => {
@@ -79,7 +81,7 @@ const CreateNewWallet = () => {
             <div className="zl_login_content container">
                 <div className="zl_all_page_heading_section">
                     <div className="zl_all_page_heading">
-                        <h2>Create New Wallet</h2>
+                        <h2>{mnemonics ? 'Import Wallet' : 'Create New Wallet'}</h2>
                     </div>
                 </div>
                 <div className="zl_login_heading_text">
@@ -120,11 +122,15 @@ const CreateNewWallet = () => {
                         className="mx-auto zl_login_btn_link"
                         onClick={() => createWalletHandler()}
                     >
-                        Create Wallet
+                        {mnemonics ? 'Confirm' : 'Create Wallet'}
                     </button>
-                    <Link to={RouteEnum.restorePage} className="mx-auto my-4 zl_link_button cent">
-                        I already have wallet
-                    </Link>
+                    {mnemonics ? ''
+                        : (
+                            <Link to={RouteEnum.restorePage} className="mx-auto my-4 zl_link_button cent">
+                                I already have wallet
+                            </Link>
+                        )
+                    }
                 </div>
             </div>
         </section>
