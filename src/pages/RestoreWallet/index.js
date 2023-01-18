@@ -78,19 +78,6 @@ const RestoreWallet = () => {
                   </div>
                 </div>
               ))}
-            {/* {inputField.map((inputValue, i) => (
-              <div className="zl_securebackup_col_3 col-lg-3 col-md-6" key={i}>
-                <div className="zl_securebackup_input_content position-relative">
-                  <p className="zl_securebackup_input_text">{inputValue}</p>
-                  <input
-                    type="text"
-                    className="zl_securebackup_input"
-                    name={`input${inputValue}`}
-                    placeholder="________"
-                  />
-                </div>
-              </div>
-            ))} */}
           </div>
           <div className="zl_securebackup_btn">
             {err && <span className="err_text">{err}</span>}

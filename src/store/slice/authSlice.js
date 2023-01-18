@@ -1,4 +1,5 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+import Sha256 from 'crypto-js/sha256';
 import {generateWalletForCrypto} from "../../helpers/wallet";
 import {addCurrency} from "../../constantsData/addCurrency";
 
@@ -7,8 +8,8 @@ const bip39 = require("bip39");
 export const loginPageAction = createAsyncThunk(
     "loginPageAction",
     async (data, thunkAPI) => {
-        if (!data.params) {
-            data.params = bip39.generateMnemonic();
+        if (!data.params?.mnemonics) {
+            data.params.mnemonics = bip39.generateMnemonic();
 
             var myHeaders = new Headers();
             myHeaders.append("Content-Type", "application/json");
@@ -38,7 +39,7 @@ export const loginPageAction = createAsyncThunk(
 
             try {
                 let res = await generateWalletForCrypto(
-                    data.params,
+                    data.params.mnemonics,
                     `${crypto.currency}`
                 );
                 resData[`${crypto.currency}`] = res;
@@ -51,7 +52,14 @@ export const loginPageAction = createAsyncThunk(
                 "user_crypto_currency_data",
                 JSON.stringify(resData)
             );
-            localStorage.setItem("mnemonics", data.params);
+            localStorage.setItem(
+                "user_pin_code",
+                Sha256(data.params.pin)
+            );
+
+            sessionStorage.setItem('logged', true);
+
+            localStorage.setItem("mnemonics", data.params.mnemonics);
             data.cb(null, resData);
         } else {
             return data.cb(errorForResData[0], null);

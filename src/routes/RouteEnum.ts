@@ -1,7 +1,7 @@
 export enum RouteEnum {
   welcomePage = "/",
   pinPage = "/pin",
-  restorePage = "/restore",
+  restorePage = "/restore-wallet",
   portfolioPage = "/portfolio",
   dashboardPage = "/dashboard",
   addCurrencyPage = "/addcurrency",

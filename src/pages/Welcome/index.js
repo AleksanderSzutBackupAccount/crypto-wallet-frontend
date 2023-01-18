@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { RouteEnum } from "../../routes/RouteEnum";
@@ -6,15 +7,9 @@ import { loginPageAction } from "../../store/slice/authSlice";
 
 const Welcome = () => {
   const [currentStep, setCurrentStep] = useState(1);
-
   const _next = () => {
     setCurrentStep(currentStep >= 2 ? 3 : currentStep + 1);
   };
-
-  // const _prev = () => {
-  //   setCurrentStep(currentStep <= 1 ? 1 : currentStep - 1);
-  // };
-
   const nextButton = () => {
     if (currentStep < 3) {
       return (

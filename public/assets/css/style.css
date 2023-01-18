@@ -42,11 +42,13 @@ ul {
 }
 .zl_all_pages_content .zl_page_sidebar[title=login],
 .zl_all_pages_content .zl_page_sidebar[title=restore],
+.zl_all_pages_content .zl_page_sidebar[title=create-new-wallet],
 .zl_all_pages_content .zl_page_sidebar[title=pin] {
   display: none;
 }
 .zl_all_pages_content .zl_page_sidebar[title=login] ~ .zl_all_pages_inner_content,
 .zl_all_pages_content .zl_page_sidebar[title=restore] ~ .zl_all_pages_inner_content,
+.zl_all_pages_content .zl_page_sidebar[title=create-new-wallet] ~ .zl_all_pages_inner_content,
 .zl_all_pages_content .zl_page_sidebar[title=pin] ~ .zl_all_pages_inner_content {
   padding: 0;
 }
@@ -496,7 +498,6 @@ table td {
   line-height: 24px;
   text-align: center;
   color: #3F496C;
-  max-width: 180px;
   display: block;
   text-decoration: none;
   border: 0;
@@ -2123,7 +2124,6 @@ table td {
   }
   .zl_all_pages_content .zl_all_pages_inner_content {
     padding: 38px 15px;
-    padding: 38px 15px;
   }
   .zl_all_pages_content .zl_page_sidebar.zl_hide_sidebar ~ .zl_all_pages_inner_content {
     padding: 38px 15px;
@@ -2238,6 +2238,59 @@ table td {
   .zl_send_currency_btn_text .zl_send_currency_text {
     text-align: center;
   }
+}
+.pin-input {
+  position: relative;
+  border-radius: 10px;
+  background: #E0E0E0;
+  width: 39px;
+  height: 46px;
+  padding: 2px;
+  margin: 5px;
+}
+.pin-input__input {
+  border-radius: 8px;
+  border: 0;
+  outline: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  line-height: 46px;
+  font-weight: 900;
+  text-align: center;
+}
+.pin-input--active, .pin-input:focus-within {
+  background: linear-gradient(100.86deg, #424C6E 26.9%, #53B9EA 95.9%);
+}
+
+.pin-input--active > input, .pin-input > input:focus-within {
+  background-color: white;
+}
+
+.input-pin-group {
+  color: #3D476A;
+}
+.input-pin-group__heading {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 36px;
+}
+.input-pin-group:not(:first-child) {
+  margin-left: 36px;
+}
+
+.pin-text-error {
+  color: #FF4B55;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 12px;
+  letter-spacing: 0;
+}
+
+.center-auth {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /*# sourceMappingURL=style.css.map */
