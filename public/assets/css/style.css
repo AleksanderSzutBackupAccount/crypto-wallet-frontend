@@ -839,7 +839,6 @@ table td {
 }
 .zl_add_currency_row .zl_currency_column_sub_row .zl_add_currency_column {
   max-width: 100%;
-  min-width: 100%;
 }
 .zl_add_currency_row .zl_currency_column_sub_row .zl_add_currency_column--button {
   background: linear-gradient(100.86deg, #424C6E 26.9%, #53B9EA 95.9%);
