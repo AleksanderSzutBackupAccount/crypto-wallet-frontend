@@ -1,23 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="32px" height="24px" viewBox="0 0 32 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>flags/L/CH - Switzerland</title>
-    <defs>
-        <rect id="path-1" x="0" y="0" width="32" height="24"></rect>
-        <rect id="path-3" x="0" y="0" width="32" height="24"></rect>
-    </defs>
-    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="flag">
-            <mask id="mask-2" fill="white">
-                <use xlink:href="#path-1"></use>
-            </mask>
-            <g id="mask"></g>
-            <g id="contents" mask="url(#mask-2)">
-                <mask id="mask-4" fill="white">
-                    <use xlink:href="#path-3"></use>
-                </mask>
-                <use id="background" fill="#E31D1C" xlink:href="#path-3"></use>
-                <path d="M18,6 L18,10 L22,10 L22,14 L18,14 L18,18 L14,18 L14,14 L10,14 L10,10 L14,10 L14,6 L18,6 Z" id="Combined-Shape" fill="#F1F9FF" mask="url(#mask-4)"></path>
-            </g>
-        </g>
-    </g>
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_324_1146)">
+<path d="M24 17.884C24 19.2001 22.9548 20.1292 21.6774 20.1292H2.32258C1.04516 20.1292 0 19.2001 0 17.884V6.11626C0 4.80013 1.04516 3.87109 2.32258 3.87109H21.6774C22.9548 3.87109 24 4.80013 24 6.11626V17.884Z" fill="#DB2727"/>
+<path d="M2.32257 3.87109H21.6774C22.9548 3.87109 24 4.80013 24 6.11626V17.884C24 19.2001 22.8774 20.1292 21.6 20.1292" fill="#C41616"/>
+<path d="M2.32257 3.87109H21.6774C22.9548 3.87109 24 4.80013 24 6.11626V10.4517" fill="#AD0505"/>
+<path d="M24 17.8453C24 19.2389 22.9548 20.1292 21.6774 20.1292H2.32258C1.04516 20.1292 0 19.1228 0 17.8066" fill="#AD0505"/>
+<path d="M17.4193 10.0644H13.9355V6.58057H10.0645V10.0644H6.58063V13.9354H10.0645V17.4193H13.9355V13.9354H17.4193V10.0644Z" fill="white"/>
+<path d="M13.9355 6.58057H10.0645V10.0644H9.63873L14.3613 13.9354H17.4194V10.0644H13.9355V6.58057Z" fill="#CEDDDD"/>
+</g>
+<defs>
+<clipPath id="clip0_324_1146">
+<rect width="24" height="24" fill="white"/>
+</clipPath>
+</defs>
 </svg>
