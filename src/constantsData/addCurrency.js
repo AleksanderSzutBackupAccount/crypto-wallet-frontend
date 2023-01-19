@@ -53,7 +53,7 @@ export const addCurrency = [
     coin_name: "MATIC"
   },
   {
-    image: "assets/image/currency/TETHER.svg",
+    image: "assets/image/currency/TUSDT.svg",
     currency: "TUSDT",
     display_currency: "TUSDT",
     coingecko_coin_name: "tether",
