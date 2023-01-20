@@ -226,7 +226,8 @@ const TransactionForm = ({
   const sendCoin = async (e) => {
     e.preventDefault();
     if (validate()) {
-      if (insertAmount > coinBalance.toFixed(6) || totalAmount < 0) {
+      console.log(insertAmount, coinBalance.toFixed(6), totalAmount);
+      if (insertAmount < coinBalance.toFixed(6) || totalAmount < 0) {
         toast.error(
           `Transferrable amount and transaction fees is larger then your coin balance`,
           {
