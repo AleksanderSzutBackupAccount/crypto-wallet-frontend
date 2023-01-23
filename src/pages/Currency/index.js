@@ -12,7 +12,8 @@ const Currency = () => {
         code: "USA", // Currency image
         currency: "USD", // Currency name which is supported by Coingecko
         currency_type: "American Dollar", // Currency type
-    }, {
+    },
+        /*{
         code: "BRA", currency: "BRL", currency_type: "Brazilian Real",
     }, {
         code: "CAD", currency: "CAD", currency_type: "Canadian Dollar",
@@ -26,7 +27,8 @@ const Currency = () => {
         code: "EUR", currency: "EUR", currency_type: "Europe",
     }, {
         code: "IND", currency: "INR", currency_type: "India",
-    },];
+    },*/
+    ];
 
     const [cur, setCur] = useState([]);
 
