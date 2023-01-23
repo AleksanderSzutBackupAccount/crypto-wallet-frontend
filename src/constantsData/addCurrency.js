@@ -57,6 +57,19 @@ export const addCurrency = [
     coin_name: "MATIC"
   },
   {
+    image: "assets/image/currency/BSC.svg",
+    currency: "BSC",
+    display_currency: "BSC",
+    coingecko_coin_name: "binancecoin",
+    moralis_api_chain: "bsc",
+    moralis_coin_name: "binancecoin",
+    tatum_coin_name: "bsc",
+    is_erc20: false,
+    default_enabled: false,
+    transaction_link: "https://bscscan.com/tx/",
+    coin_type: "token",
+  },
+  {
     image: "assets/image/currency/TUSDT.svg",
     currency: "TUSDT",
     display_currency: "TUSDT",
