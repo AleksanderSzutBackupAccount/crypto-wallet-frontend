@@ -6,9 +6,8 @@ class TUSDT extends ERC20Based {
       ...props,
       key: "TUSDT",
       keyCoin: "ETH",
-      chain: "rinkeby",
       digits: 6,
-      contractAddress: "0xd92e713d051c37ebb2561803a3b5fbabc4962431",
+      contractAddress: "0x514910771AF9Ca656af840dff83E8264EcF986CA",
     });
   }
 }

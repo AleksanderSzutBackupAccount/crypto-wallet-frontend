@@ -25,6 +25,7 @@ export const generateWalletForCrypto = async (mnemonics_data, Cur, cb) => {
             pub_key,
             0
         );
+        console.log(address);
         return {address, pub_key, privateKey};
     } catch (error) {
         console.log("error with created wallet", error);

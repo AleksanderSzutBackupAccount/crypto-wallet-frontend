@@ -61,7 +61,7 @@ export const addCurrency = [
     currency: "TUSDT",
     display_currency: "TUSDT",
     coingecko_coin_name: "tether",
-    moralis_api_chain: "erc20",
+    moralis_api_chain: "eth",
     moralis_coin_name: "tether",
     tatum_coin_name: "ethereum", // For ex. for erc20 token we used "ethereum", for bep20 token we used "bsc" and for matic based token we used "polygon"
     is_erc20: true,
