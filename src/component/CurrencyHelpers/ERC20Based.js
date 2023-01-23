@@ -49,7 +49,7 @@ class ERC20Based {
       console.log("responseTransactionFees", response.data);
       return {
         gasLimit: Math.max(+30000, +response.data?.gasLimit).toString(),
-        gasPrice: (response.data?.estimations.standard * 10 ** -9).toFixed(0),
+        gasPrice: (response.data?.gasPrice * 10 ** -9).toFixed(0),
       };
     } catch (error) {
       console.log("error", error);

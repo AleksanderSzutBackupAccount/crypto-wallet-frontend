@@ -66,15 +66,13 @@ export const getErc20Transactions = createAsyncThunk(
   "getErc20Transactions",
   async (data, thunkAPI) => {
     try {
-      console.log(data);
       const response = await AxiosMoralis.get(
         `/${data.address}/erc20/transfers?chain=${data.chain}`,
         authHeadersMoralis()
       );
-      console.log("responseETH", data.contract_address, response.data.result);
       return {
         [data.contract_address]: response.data.result?.filter(
-          (item) => item.address === data.contract_address
+          (item) => item.address.toLowerCase() === data.contract_address.toLowerCase()
         ),
       };
     } catch (error) {

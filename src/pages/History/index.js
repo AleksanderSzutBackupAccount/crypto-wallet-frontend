@@ -65,7 +65,7 @@ const History = () => {
         value?.is_erc20
           ? getErc20Transactions({
               address: currencyAddress,
-              chain: value?.chain,
+              chain: value?.moralis_api_chain,
               contract_address: value?.contract_address,
             })
           : getTransactions({
@@ -92,7 +92,7 @@ const History = () => {
           dispatch(
             getErc20Transactions({
               address: userCurrency[cryptoCoins[i].currency]?.address,
-              chain: cryptoCoins[i]?.chain,
+              chain: cryptoCoins[i]?.moralis_api_chain,
               contract_address: cryptoCoins[i]?.contract_address,
             })
           );

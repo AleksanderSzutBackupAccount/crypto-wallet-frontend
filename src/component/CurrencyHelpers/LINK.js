@@ -1,13 +1,13 @@
-import MATICBasedERC20 from "./MATICBasedERC20";
+import ERC20Based from "./ERC20Based";
 
-class LINK extends MATICBasedERC20 {
+class LINK extends ERC20Based {
   constructor(props) {
     super({
       ...props,
       key: "LINK",
-      keyCoin: "MATIC",
+      keyCoin: "ETH",
       digits: 18,
-      contractAddress: "0x326c977e6efc84e512bb9c30f76e30c160ed06fb",
+      contractAddress: "0x514910771AF9Ca656af840dff83E8264EcF986CA",
     });
   }
 }

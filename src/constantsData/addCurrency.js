@@ -1,4 +1,5 @@
-export const addCurrency = [
+
+/* Example:
   {
     image: "assets/image/currency/BTC.svg", // Image of crypto-coin (Add image in public/assets/img folder)
     currency: "BTC", // Value used for generateWallet (For this value refer tatum doc)
@@ -12,6 +13,22 @@ export const addCurrency = [
     transaction_link: "https://www.blockchain.com/btc/tx/", // Value of Base URL to visit transaction details page based on hash for particular Crypto coin
     coin_type: "bitcoin", // Value is used to specify type of crypto currency (For ex. "bitcoin" for Bitcoin based Crypto Currency, "ethereum" for Ethereum based Crypto Currency and "token" for Tokens)
   },
+ */
+
+export const addCurrency = [
+  {
+    image: "assets/image/currency/BTC.svg",
+    currency: "BTC",
+    display_currency: "BTC",
+    coingecko_coin_name: "bitcoin",
+    moralis_api_chain: "",
+    moralis_coin_name: "",
+    tatum_coin_name: "bitcoin",
+    is_erc20: false,
+    default_enabled: false,
+    transaction_link: "https://www.blockchain.com/btc/tx/",
+    coin_type: "bitcoin",
+  },
   {
     image: "assets/image/currency/ETH.svg",
     currency: "ETH",
@@ -24,19 +41,6 @@ export const addCurrency = [
     default_enabled: true,
     transaction_link: "https://etherscan.io/tx/",
     coin_type: "ethereum",
-  },
-  {
-    image: "assets/image/currency/BSC.svg",
-    currency: "BSC",
-    display_currency: "BSC",
-    coingecko_coin_name: "binancecoin",
-    moralis_api_chain: "bsc",
-    moralis_coin_name: "binancecoin",
-    tatum_coin_name: "bsc",
-    is_erc20: false,
-    default_enabled: false,
-    transaction_link: "https://bscscan.com/tx/",
-    coin_type: "token",
   },
   {
     image: "assets/image/currency/MATIC.svg",
@@ -70,23 +74,6 @@ export const addCurrency = [
     chain: "erc20", // This Value is used to pass chain id based on network to get transactions(For ex. rinkeby or ropsten for ethereum, bsc testnet for binance, mumbai for matic)
   },
   {
-    image: "assets/image/currency/BUSD.svg",
-    currency: "BUSD",
-    display_currency: "BUSD",
-    coingecko_coin_name: "binance-usd",
-    moralis_api_chain: "bsc",
-    moralis_coin_name: "",
-    tatum_coin_name: "ethereum",
-    is_erc20: true,
-    contract_address: "0x4Fabb145d64652a948d72533023f6E7A623C7C53",
-    digits: 18,
-    default_enabled: false,
-    transaction_link: "https://testnet.bscscan.com/tx/",
-    coin_type: "token",
-    coin_name: "ETH",
-    chain: "erc20",
-  },
-  {
     image: "assets/image/currency/LINK.svg",
     currency: "LINK",
     display_currency: "LINK",
@@ -98,9 +85,9 @@ export const addCurrency = [
     contract_address: "0x514910771AF9Ca656af840dff83E8264EcF986CA",
     digits: 18,
     default_enabled: false,
-    transaction_link: "https://mumbai.polygonscan.com/tx/",
+    transaction_link: "https://etherscan.io/tx/",
     coin_type: "token",
-    coin_name: "ETH",
+    coin_name: "LINK",
     chain: "erc20",
   },
 ];
